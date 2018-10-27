@@ -20,7 +20,8 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
     "react-native-geocoding": "^0.3.0",
-    "react-native-swipe-gestures": "^1.0.2"
+    "react-native-swipe-gestures": "^1.0.2",
+    "react-test-renderer": "^16.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
