@@ -8,7 +8,7 @@ export default class HomeScreen extends Component {
 	state = {
 		location: null,
 		errorMessage: null,
-		parks: [{ name: 'Denver', coords: {latitude: 39.7460095, longitude: -105.00756590000003} }]
+		parks: [],
 	};
 
 	componentDidMount() {
