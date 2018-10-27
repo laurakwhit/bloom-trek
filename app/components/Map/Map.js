@@ -15,20 +15,10 @@ const initialRegion = {
 const Marker = MapView.Marker;
 
 export default class Map extends Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedMarker: null,
-    };
-  }
-
-  handleSelectedMarker = (id) => {
-    this.setState({ selectedMarker: id })
-  }
 
 	renderMarkers = () => {
 		return this.props.parks.map((park, i) => (
-			<Marker key={i} title={park.name} coordinate={park.coords} onPress={() => this.handleSelectedMarker(park.id)}/>
+			<Marker key={i} title={park.name} coordinate={park.coords} onPress={() => this.props.handleSelectedPark(park.id)}/>
 		));
 	}
 

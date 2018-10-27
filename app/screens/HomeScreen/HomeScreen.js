@@ -9,6 +9,7 @@ export default class HomeScreen extends Component {
 		location: null,
 		errorMessage: null,
 		parks: [],
+		selectedPark: null,
 	};
 
 	componentDidMount() {
@@ -45,12 +46,17 @@ export default class HomeScreen extends Component {
 		this.setState({ parks });
 	}
 
+	handleSelectedPark = (id) => {
+		this.setState({ selectedPark: id });
+		console.log(id)
+	}
+
 	render() {
 		const { location, parks } = this.state;
 
 		return (
 			<View style={{ flex: 7 }}>
-				<Map location={location} parks={parks} />
+				<Map location={location} parks={parks} handleSelectedPark={this.handleSelectedPark}/>
 			</View>
 		);
 	}
