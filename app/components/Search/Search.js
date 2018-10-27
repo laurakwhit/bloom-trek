@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SearchBar } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 export default class Search extends Component {
   constructor() {
     super();
     this.state = {
-      input: '',
+      searchInput: '',
     };
   }
 
   render() {
-    const { input } = this.state;
+    const { searchInput } = this.state;
+    const { updateLocation } = this.props;
 
     return (
       <SearchBar
         style={styles.search}
         showLoading
         clearIcon={{ color: 'red' }}
-        searchIcon={true}
-        onChangeText={input => this.setState({ input })}
-        onCancel={() => this.setState({ input: '' })}
-        value={input}
-        placeholder='Search location'
-        onSubmitEditing={e => this.props.updateLocation(input)} />
+        searchIcon
+        onChangeText={input => this.setState({ searchInput: input })}
+        onCancel={() => this.setState({ searchInput: '' })}
+        value={searchInput}
+        placeholder="Search location"
+        onSubmitEditing={() => updateLocation(searchInput)}
+      />
     );
   }
 }
@@ -34,3 +37,7 @@ const styles = StyleSheet.create({
     top: 100,
   },
 });
+
+Search.propTypes = {
+  updateLocation: PropTypes.func,
+};
