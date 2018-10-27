@@ -1,0 +1,17 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
+    "no-use-before-define": "off",
+    "react/no-unused-state": "off",
+    "react/require-default-props": "off"
+  }
+}
