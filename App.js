@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import HomeScreen from './app/screens/HomeScreen/HomeScreen';
 
 export default class App extends React.Component {
 	render() {
 		return (
-			<View style={styles.container}>
+			<SafeAreaView style={styles.container}>
 				<HomeScreen />
-			</View>
+			</SafeAreaView>
 		)
 	}
 }

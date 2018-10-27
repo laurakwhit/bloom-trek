@@ -3,8 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import { MapView } from 'expo';
 
 const deltas = {
-	latitudeDelta: 0.0922,
-	longitudeDelta: 0.0421
+	latitudeDelta: 1,
+	longitudeDelta: 1
 };
 
 const initialRegion = {
@@ -18,7 +18,7 @@ export default class Map extends Component {
 
 	renderMarkers() {
 		return this.props.parks.map((park, i) => (
-			<Marker key={i} title={park.name} coordinate={park.coords} />
+			<Marker key={i} id={park.id} title={park.name} coordinate={park.coords} />
 		));
 	}
 
@@ -30,7 +30,7 @@ export default class Map extends Component {
 
 		if (!region.latitude || !region.longitude) {
 			return (
-				<View>
+				<View style={styles.container}>
 					<Text>Loading map...</Text>
 				</View>
 			);
@@ -53,6 +53,8 @@ export default class Map extends Component {
 const styles = StyleSheet.create({
 	container: {
 		width: '100%',
-		height: '100%'
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
 	}
 });
