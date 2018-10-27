@@ -4,6 +4,7 @@ import { Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
+import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks } from '../../utils/api';
 import { GOOGLE_KEY } from '../../../key';
 
@@ -71,7 +72,7 @@ export default class HomeScreen extends Component {
   };
 
   render() {
-    const { location, parks } = this.state;
+    const { location, parks, selectedPark } = this.state;
 
     return (
       <View style={styles.container}>
@@ -81,6 +82,11 @@ export default class HomeScreen extends Component {
           parks={parks}
           handleSelectedPark={this.handleSelectedPark}
         />
+        {selectedPark ? (
+          <InfoContainer selectedPark={selectedPark} />
+        ) : (
+          <View />
+        )}
       </View>
     );
   }
@@ -88,6 +94,6 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 7,
+    flex: 1,
   },
 });
