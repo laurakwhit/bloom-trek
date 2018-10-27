@@ -24,8 +24,7 @@ export default class Map extends Component {
 
 	render() {
 		const region = {
-			latitude: 39.739,
-      longitude: -104.99,
+			...this.props.location,
       ...deltas
 		};
 
@@ -42,7 +41,8 @@ export default class Map extends Component {
 				style={styles.container}
 				region={region}
 				initialRegion={{ ...initialRegion, ...deltas }}
-				showsUserLocation
+        showsUserLocation
+        showsMyLocationButton
 			>
 				{this.renderMarkers()}
 			</MapView>
