@@ -1,5 +1,7 @@
 # Bloom Trek
 
+[![Build Status](https://travis-ci.org/laurakwhit/bloom-trek.svg?branch=master)](https://travis-ci.org/laurakwhit/bloom-trek)
+
 ## Set Up
 
 Download NodeJS
