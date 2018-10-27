@@ -11,6 +11,7 @@
     "react/jsx-filename-extension": "off",
     "import/no-unresolved": "off",
     "no-use-before-define": "off",
-    "react/no-unused-state": "off"
+    "react/no-unused-state": "off",
+    "react/require-default-props": "off"
   }
 }

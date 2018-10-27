@@ -18,8 +18,7 @@ const { Marker } = MapView;
 export default class Map extends Component {
   renderMarkers = () => {
     const { parks, handleSelectedPark } = this.props;
-
-    parks.map(park => (
+    return parks.map(park => (
       <Marker
         key={park.id}
         title={park.name}
@@ -68,9 +67,9 @@ const styles = StyleSheet.create({
 });
 
 Map.propTypes = {
-  parks: PropTypes.arrayOf(PropTypes.objects).isRequired,
-  handleSelectedPark: PropTypes.func.isRequired,
+  parks: PropTypes.arrayOf(PropTypes.object),
+  handleSelectedPark: PropTypes.func,
   location: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.num]),
-  ).isRequired,
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ),
 };
