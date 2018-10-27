@@ -17,8 +17,8 @@ const Marker = MapView.Marker;
 export default class Map extends Component {
 
 	renderMarkers() {
-		return this.props.places.map((place, i) => (
-			<Marker key={i} title={place.name} coordinate={place.coords} />
+		return this.props.parks.map((park, i) => (
+			<Marker key={i} title={park.name} coordinate={park.coords} />
 		));
 	}
 
@@ -43,7 +43,6 @@ export default class Map extends Component {
 				region={region}
 				initialRegion={{ ...initialRegion, ...deltas }}
 				showsUserLocation
-				showsMyLocationButton
 			>
 				{this.renderMarkers()}
 			</MapView>
