@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Location, Permissions } from 'expo';
+import Geocoder from 'react-native-geocoding';
 import Map from '../../components/Map/Map';
+import Search from '../../components/Search/Search';
 import { getAllParks } from '../../utils/api';
+import { GOOGLE_KEY } from '../../../key';
+
+Geocoder.init(GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
   state = {
@@ -50,11 +55,27 @@ export default class HomeScreen extends Component {
     this.setState({ selectedPark: id });
   };
 
+  updateLocation = (input) => {
+    Geocoder.from(input)
+      .then((json) => {
+        const { location } = json.results[0].geometry;
+        const { lat, lng } = location;
+        this.setState({
+          location: {
+            latitude: lat,
+            longitude: lng,
+          },
+        });
+      })
+      .catch(error => console.warn(error));
+  };
+
   render() {
     const { location, parks } = this.state;
 
     return (
       <View style={styles.container}>
+        <Search updateLocation={this.updateLocation} />
         <Map
           location={location}
           parks={parks}

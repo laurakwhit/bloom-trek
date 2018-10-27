@@ -2,3 +2,7 @@ node_modules/**/*
 .expo/*
 npm-debug.*
 assets/.DS_Store
+
+# API
+
+key.js
