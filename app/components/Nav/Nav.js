@@ -12,6 +12,9 @@ export default class Nav extends Component {
 
   updateIndex = (selectedIndex) => {
     this.setState({ selectedIndex });
+    if (selectedIndex === 1) {
+      this.props.resetMap();
+    }
   };
 
   render() {

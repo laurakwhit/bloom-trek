@@ -16,6 +16,10 @@ export default class HomeScreen extends Component {
     errorMessage: null,
     parks: [],
     selectedPark: null,
+    deltas: {
+      latitudeDelta: 1,
+      longitudeDelta: 1,
+    },
   };
 
   componentDidMount() {
@@ -53,7 +57,27 @@ export default class HomeScreen extends Component {
   };
 
   handleSelectedPark = (id) => {
-    this.setState({ selectedPark: id });
+    const { parks } = this.state;
+    const matchingPark = parks.find(park => park.id === id);
+    this.setState({
+      selectedPark: id,
+      location: matchingPark.coords,
+      deltas: {
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      },
+    });
+  };
+
+  resetMap = () => {
+    this.getCurrentLocation();
+    this.setState({
+      selectedPark: null,
+      deltas: {
+        latitudeDelta: 1,
+        longitudeDelta: 1,
+      },
+    });
   };
 
   updateLocation = (input) => {
@@ -72,18 +96,20 @@ export default class HomeScreen extends Component {
   };
 
   render() {
-    const { location, parks, selectedPark } = this.state;
-
+    const {
+      location, parks, selectedPark, deltas,
+    } = this.state;
     return (
       <View style={styles.container}>
         <Search updateLocation={this.updateLocation} />
         <Map
           location={location}
           parks={parks}
+          deltas={deltas}
           handleSelectedPark={this.handleSelectedPark}
         />
         {selectedPark ? (
-          <InfoContainer selectedPark={selectedPark} />
+          <InfoContainer selectedPark={selectedPark} resetMap={this.resetMap} />
         ) : (
           <View />
         )}

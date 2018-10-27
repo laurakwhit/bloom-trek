@@ -7,7 +7,7 @@ export default class InfoContainer extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>{this.props.selectedPark}</Text>
-        <Nav />
+        <Nav resetMap={this.props.resetMap} />
       </View>
     );
   }
