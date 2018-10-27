@@ -8,7 +8,7 @@ Download Xcode
 
 npm install expo-cli --global
 
-expo init bloom-trek
+clone down this repo
 
 cd bloom-trek
 
