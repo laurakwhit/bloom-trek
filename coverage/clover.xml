@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1540673667456" clover="3.2.0">
+  <project timestamp="1540673667457" name="All files">
+    <metrics statements="14" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1" elements="22" coveredelements="12" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1">
+      <file name="Map.js" path="/Users/chrisboylen/Desktop/turing/mod-four/projects/bloom-trek/app/components/Map/Map.js">
+        <metrics statements="14" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="38" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>
