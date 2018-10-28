@@ -42,4 +42,13 @@ describe('Search', () => {
       expect(wrapper.state().searchInput).toBe('boulder');
     });
   });
+
+  describe('handleSubmit', () => {
+    it('should invoke updateLocation when called', () => {
+      wrapper.setState({ searchInput: 'aspen' });
+      wrapper.instance().handleSubmit();
+
+      expect(mockUpdateLocation).toHaveBeenCalled();
+    });
+  });
 });
