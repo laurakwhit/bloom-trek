@@ -3,27 +3,27 @@ import { View, Text, StyleSheet } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 
 export default class Nav extends Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedIndex: 0,
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     selectedIndex: 0,
+  //   };
+  // }
 
-  updateIndex = (selectedIndex) => {
-    this.setState({ selectedIndex });
-    if (selectedIndex === 1) {
-      this.props.resetMap();
-    }
-  };
+  // updateIndex = (selectedIndex) => {
+  //   this.setState({ selectedIndex });
+  //   if (selectedIndex === 1) {
+  //     this.props.resetMap();
+  //   }
+  // };
 
   render() {
     const buttons = ['Flowers', 'Home', 'Trails'];
-    const { selectedIndex } = this.state;
+    const { selectedIndex, updateIndex } = this.props;
 
     return (
       <ButtonGroup
-        onPress={this.updateIndex}
+        onPress={updateIndex}
         selectedIndex={selectedIndex}
         buttons={buttons}
         containerStyle={{ flex: 1 }}
