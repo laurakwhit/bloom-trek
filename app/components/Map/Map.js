@@ -3,11 +3,6 @@ import { View, Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { MapView } from 'expo';
 
-const deltas = {
-  latitudeDelta: 1,
-  longitudeDelta: 1,
-};
-
 const initialRegion = {
   latitude: 39.739,
   longitude: -104.99,
@@ -16,20 +11,25 @@ const initialRegion = {
 const { Marker } = MapView;
 
 export default class Map extends Component {
+  handleMarkerPress = (id) => {
+    const { handleSelectedPark } = this.props;
+    handleSelectedPark(id);
+  };
+
   renderMarkers = () => {
-    const { parks, handleSelectedPark } = this.props;
+    const { parks } = this.props;
     return parks.map(park => (
       <Marker
         key={park.id}
         title={park.name}
         coordinate={park.coords}
-        onPress={() => handleSelectedPark(park.id)}
+        onPress={() => this.handleMarkerPress(park.id)}
       />
     ));
   };
 
   render() {
-    const { location } = this.props;
+    const { location, deltas } = this.props;
     const region = {
       ...location,
       ...deltas,
@@ -59,8 +59,7 @@ export default class Map extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -72,4 +71,5 @@ Map.propTypes = {
   location: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ),
+  deltas: PropTypes.objectOf(PropTypes.number),
 };

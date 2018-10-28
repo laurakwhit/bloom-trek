@@ -12,6 +12,9 @@
     "import/no-unresolved": "off",
     "no-use-before-define": "off",
     "react/no-unused-state": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "camelcase": "off",
+    "global-require": "off"
   }
 }

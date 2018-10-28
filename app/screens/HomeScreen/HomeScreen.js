@@ -4,6 +4,7 @@ import { Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
+import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks } from '../../utils/api';
 import { GOOGLE_KEY } from '../../../key';
 
@@ -15,6 +16,10 @@ export default class HomeScreen extends Component {
     errorMessage: null,
     parks: [],
     selectedPark: null,
+    deltas: {
+      latitudeDelta: 1,
+      longitudeDelta: 1,
+    },
   };
 
   componentDidMount() {
@@ -39,20 +44,32 @@ export default class HomeScreen extends Component {
   };
 
   getParks = async () => {
-    const unformattedParks = await getAllParks();
-    const parks = unformattedParks.map(park => ({
-      id: park.id,
-      name: park.name,
-      coords: {
-        latitude: park.latitude,
-        longitude: park.longitude,
-      },
-    }));
+    const parks = await getAllParks();
     this.setState({ parks });
   };
 
   handleSelectedPark = (id) => {
-    this.setState({ selectedPark: id });
+    const { parks } = this.state;
+    const matchingPark = parks.find(park => park.id === id);
+    this.setState({
+      selectedPark: id,
+      location: matchingPark.coords,
+      deltas: {
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      },
+    });
+  };
+
+  resetMap = () => {
+    this.getCurrentLocation();
+    this.setState({
+      selectedPark: null,
+      deltas: {
+        latitudeDelta: 1,
+        longitudeDelta: 1,
+      },
+    });
   };
 
   updateLocation = (input) => {
@@ -71,16 +88,23 @@ export default class HomeScreen extends Component {
   };
 
   render() {
-    const { location, parks } = this.state;
-
+    const {
+      location, parks, selectedPark, deltas,
+    } = this.state;
     return (
       <View style={styles.container}>
         <Search updateLocation={this.updateLocation} />
         <Map
           location={location}
           parks={parks}
+          deltas={deltas}
           handleSelectedPark={this.handleSelectedPark}
         />
+        {selectedPark ? (
+          <InfoContainer selectedPark={selectedPark} resetMap={this.resetMap} />
+        ) : (
+          <View />
+        )}
       </View>
     );
   }
@@ -88,6 +112,6 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 7,
+    flex: 1,
   },
 });
