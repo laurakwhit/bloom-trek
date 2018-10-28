@@ -16,4 +16,11 @@ describe('Search', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should set state when input is changed', () => {
+    wrapper.setState({ searchInput: 'aspen' });
+
+    expect(wrapper.state().searchInput).toEqual('aspen');
+  });
+
 });
