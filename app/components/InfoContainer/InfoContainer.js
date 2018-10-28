@@ -45,6 +45,10 @@ export default class InfoContainer extends Component {
     });
   };
 
+  goToFlowerDetails = (selectedFlower) => {
+    this.setState({ selectedFlower });
+  };
+
   render() {
     const { flowers, selectedFlower } = this.state;
     const {
