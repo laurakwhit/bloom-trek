@@ -47,7 +47,8 @@ export default class InfoContainer extends Component {
     return (
       <View style={styles.container}>
         {selectedIndex === 2 && selectedTrail
-          ? <TrailDetail trailInfo={trailInfo} resetSelectedTrail={this.resetSelectedTrail} /> : <View />}
+          ? <TrailDetail trailInfo={trailInfo} resetSelectedTrail={this.resetSelectedTrail} />
+          : <View />}
         {selectedIndex === 0 ? <Text style={styles.list}>{selectedIndex}</Text> : <View />}
         {selectedIndex === 2 && !selectedTrail
           ? <TrailList trails={trails} goToTrailDetails={this.goToTrailDetails} /> : <View />}
