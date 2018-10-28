@@ -22,13 +22,20 @@ ShallowWrapper {
           updateLocation={[Function]}
         />,
         <Map
+          deltas={
+            Object {
+              "latitudeDelta": 1,
+              "longitudeDelta": 1,
+            }
+          }
           handleSelectedPark={[Function]}
           location={null}
           parks={Array []}
         />,
+        <Component />,
       ],
       "style": Object {
-        "flex": 7,
+        "flex": 1,
       },
     },
     "ref": null,
@@ -49,10 +56,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "deltas": Object {
+            "latitudeDelta": 1,
+            "longitudeDelta": 1,
+          },
           "handleSelectedPark": [Function],
           "location": null,
           "parks": Array [],
         },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -71,13 +91,20 @@ ShallowWrapper {
             updateLocation={[Function]}
           />,
           <Map
+            deltas={
+              Object {
+                "latitudeDelta": 1,
+                "longitudeDelta": 1,
+              }
+            }
             handleSelectedPark={[Function]}
             location={null}
             parks={Array []}
           />,
+          <Component />,
         ],
         "style": Object {
-          "flex": 7,
+          "flex": 1,
         },
       },
       "ref": null,
@@ -98,10 +125,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "deltas": Object {
+              "latitudeDelta": 1,
+              "longitudeDelta": 1,
+            },
             "handleSelectedPark": [Function],
             "location": null,
             "parks": Array [],
           },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
