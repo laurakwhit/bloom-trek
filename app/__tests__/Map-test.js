@@ -1,11 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Map from '../components/Map/Map';
 
 describe('Map', () => {
-  it('should match snapshot', () => {
-    const wrapper = renderer.create(<Map />).toJSON();
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = shallow(<Map />);
+  });
+
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
