@@ -23,4 +23,15 @@ describe('Search', () => {
     expect(wrapper.state().searchInput).toEqual('aspen');
   });
 
+  describe('handleCancel', () => {
+    it('should set state when invoked', () => {
+      wrapper.setState({ searchInput: 'aspen' });
+      expect(wrapper.state().searchInput).toBe('aspen');
+
+      wrapper.instance().handleCancel();
+
+      expect(wrapper.state().searchInput).toBe('');
+    });
+  });
+
 });
