@@ -1,39 +1,23 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
 import { ButtonGroup } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
-export default class Nav extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     selectedIndex: 0,
-  //   };
-  // }
+const Nav = ({ selectedIndex, updateIndex }) => {
+  const buttons = ['Flowers', 'Home', 'Trails'];
 
-  // updateIndex = (selectedIndex) => {
-  //   this.setState({ selectedIndex });
-  //   if (selectedIndex === 1) {
-  //     this.props.resetMap();
-  //   }
-  // };
+  return (
+    <ButtonGroup
+      onPress={updateIndex}
+      selectedIndex={selectedIndex}
+      buttons={buttons}
+      containerStyle={{ flex: 1 }}
+    />
+  );
+};
 
-  render() {
-    const buttons = ['Flowers', 'Home', 'Trails'];
-    const { selectedIndex, updateIndex } = this.props;
+Nav.propTypes = {
+  selectedIndex: PropTypes.number,
+  updateIndex: PropTypes.func,
+};
 
-    return (
-      <ButtonGroup
-        onPress={updateIndex}
-        selectedIndex={selectedIndex}
-        buttons={buttons}
-        containerStyle={{ flex: 1 }}
-      />
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  nav: {
-    flex: 1,
-  },
-});
+export default Nav;
