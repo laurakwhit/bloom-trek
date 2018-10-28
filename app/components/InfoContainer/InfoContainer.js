@@ -17,6 +17,10 @@ export default class InfoContainer extends Component {
     };
   }
 
+  resetSelectedTrail = () => {
+    this.setState({ selectedTrail: null });
+  }
+
   updateIndex = async (selectedIndex) => {
     const { resetMap, selectedPark } = this.props;
     const { trails } = this.state;
@@ -42,7 +46,8 @@ export default class InfoContainer extends Component {
 
     return (
       <View style={styles.container}>
-        {selectedIndex === 2 && selectedTrail ? <TrailDetail trailInfo={trailInfo} /> : <View />}
+        {selectedIndex === 2 && selectedTrail
+          ? <TrailDetail trailInfo={trailInfo} resetSelectedTrail={this.resetSelectedTrail} /> : <View />}
         {selectedIndex === 0 ? <Text style={styles.list}>{selectedIndex}</Text> : <View />}
         {selectedIndex === 2 && !selectedTrail
           ? <TrailList trails={trails} goToTrailDetails={this.goToTrailDetails} /> : <View />}
