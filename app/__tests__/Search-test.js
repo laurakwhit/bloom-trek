@@ -34,4 +34,12 @@ describe('Search', () => {
     });
   });
 
+  describe('handleChangeText', () => {
+    it('should set state when invoked', () => {
+      const input = 'boulder';
+      wrapper.instance().handleChangeText(input);
+
+      expect(wrapper.state().searchInput).toBe('boulder');
+    });
+  });
 });
