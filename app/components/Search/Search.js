@@ -23,9 +23,15 @@ export default class Search extends Component {
     });
   };
 
+  handleSubmit = () => {
+    const { updateLocation } = this.props;
+    const { searchInput } = this.state;
+
+    updateLocation(searchInput);
+  }
+
   render() {
     const { searchInput } = this.state;
-    const { updateLocation } = this.props;
 
     return (
       <SearchBar
@@ -37,7 +43,7 @@ export default class Search extends Component {
         onCancel={this.handleCancel}
         value={searchInput}
         placeholder="Search location"
-        onSubmitEditing={() => updateLocation(searchInput)}
+        onSubmitEditing={this.handleSubmit}
       />
     );
   }
