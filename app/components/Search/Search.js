@@ -17,6 +17,12 @@ export default class Search extends Component {
     });
   };
 
+  handleChangeText = (input) => {
+    this.setState({
+      searchInput: input,
+    });
+  };
+
   render() {
     const { searchInput } = this.state;
     const { updateLocation } = this.props;
@@ -28,7 +34,7 @@ export default class Search extends Component {
         clearIcon={{ color: 'red' }}
         searchIcon
         onChangeText={input => this.setState({ searchInput: input })}
-        onCancel={() => this.setState({ searchInput: '' })}
+        onCancel={this.handleCancel}
         value={searchInput}
         placeholder="Search location"
         onSubmitEditing={() => updateLocation(searchInput)}
