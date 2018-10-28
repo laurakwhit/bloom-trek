@@ -43,7 +43,7 @@ describe('Search', () => {
     });
   });
 
-  describe('handleSubmit', () => {
+  describe.skip('handleSubmit', () => {
     it('should invoke updateLocation when called', () => {
       wrapper.setState({ searchInput: 'aspen' });
       wrapper.instance().handleSubmit();
