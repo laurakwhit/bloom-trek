@@ -11,6 +11,12 @@ export default class Search extends Component {
     };
   }
 
+  handleCancel = () => {
+    this.setState({
+      searchInput: '',
+    });
+  };
+
   render() {
     const { searchInput } = this.state;
     const { updateLocation } = this.props;
