@@ -44,15 +44,7 @@ export default class HomeScreen extends Component {
   };
 
   getParks = async () => {
-    const unformattedParks = await getAllParks();
-    const parks = unformattedParks.map(park => ({
-      id: park.id,
-      name: park.name,
-      coords: {
-        latitude: park.latitude,
-        longitude: park.longitude,
-      },
-    }));
+    const parks = await getAllParks();
     this.setState({ parks });
   };
 
