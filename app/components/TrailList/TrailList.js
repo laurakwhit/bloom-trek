@@ -7,13 +7,30 @@ const TrailList = ({ trails }) => (
   <ScrollView contentContainerStyle={styles.container}>
     <List>
       {
-      trails.map(trail => (
-        <ListItem
-          key={trail.name}
-          title={trail.name}
-          // leftIcon={{name: trail.icon}}
-        />
-      ))
+      trails.map((trail) => {
+        let icon;
+        switch (trail.difficulty) {
+          case ('easy'):
+            icon = require('../../../assets/icons/triangle.jpg');
+            break;
+          case ('medium'):
+            icon = require('../../../assets/icons/rectangle.jpg');
+            break;
+          case ('hard'):
+            icon = require('../../../assets/icons/circle.jpg');
+            break;
+          default:
+            break;
+        }
+        return (
+          <ListItem
+            avatar={icon}
+            key={trail.name}
+            title={trail.name}
+            subtitle={`${trail.length} miles`}
+          />
+        );
+      })
       }
     </List>
   </ScrollView>

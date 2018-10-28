@@ -34,7 +34,7 @@ export default class InfoContainer extends Component {
     return (
       <View style={styles.container}>
         {selectedIndex === 0 ? <Text style={styles.list}>{selectedIndex}</Text> : <View />}
-        {selectedIndex === 2 ? <TrailList style={styles.list} trails={trails} /> : <View />}
+        {selectedIndex === 2 ? <TrailList trails={trails} /> : <View />}
         <Nav updateIndex={this.updateIndex} selectedIndex={selectedIndex} />
       </View>
     );
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    flex: 5,
+    height: 225,
   },
 });
 
