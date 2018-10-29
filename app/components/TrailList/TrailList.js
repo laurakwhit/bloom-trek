@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-const TrailList = ({ trails, goToTrailDetails }) => (
+const TrailList = ({ trails, handleSelectedTrail }) => (
   <ScrollView contentContainerStyle={styles.container}>
     <List>
       {
@@ -28,7 +28,7 @@ const TrailList = ({ trails, goToTrailDetails }) => (
             key={trail.name}
             title={trail.name}
             subtitle={`${trail.length} miles`}
-            onPress={() => goToTrailDetails(trail.id)}
+            onPress={() => handleSelectedTrail(trail.id)}
           />
         );
       })
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
 TrailList.propTypes = {
   trails: PropTypes.arrayOf(PropTypes.object),
-  goToTrailDetails: PropTypes.func,
+  handleSelectedTrail: PropTypes.func,
 };
 
 export default TrailList;
