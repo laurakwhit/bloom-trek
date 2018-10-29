@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
+import { GOOGLE_KEY } from 'react-native-dotenv';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks, getParkTrails } from '../../utils/api';
 
-Geocoder.init(process.env.GOOGLE_KEY);
+Geocoder.init(GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
   state = {
