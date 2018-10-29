@@ -30,14 +30,3 @@ export const getFlowersByMonth = async (id, month) => {
     throw new Error({ message: error.message });
   }
 };
-
-export const getFlowersByMonth = async (id, month) => {
-  try {
-    const response = await fetch(
-      `https://bloom-trek-api.herokuapp.com/api/v1/parks/${id}/flowers?month=${month}`,
-    );
-    return response.json();
-  } catch (error) {
-    throw new Error({ message: error.message });
-  }
-};
