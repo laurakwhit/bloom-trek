@@ -106,6 +106,7 @@ export default class HomeScreen extends Component {
     this.setState({ selectedIndex });
     if (selectedIndex === 1) {
       this.resetMap();
+      this.setState({ selectedIndex: 0 });
     }
   };
 
