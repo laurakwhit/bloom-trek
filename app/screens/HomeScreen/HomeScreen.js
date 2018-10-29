@@ -6,9 +6,8 @@ import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks, getParkTrails } from '../../utils/api';
-import { GOOGLE_KEY } from '../../../key';
 
-Geocoder.init(GOOGLE_KEY);
+Geocoder.init(process.env.GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
   state = {
