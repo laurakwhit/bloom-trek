@@ -29,6 +29,11 @@ export default class InfoContainer extends Component {
     this.getFlowers(selectedPark);
   }
 
+  resetSelectedFlower = () => {
+    this.setState({
+      selectedFlower: null
+    });
+  };
 
   render() {
     const { selectedIndex, updateIndex } = this.props;
