@@ -127,6 +127,7 @@ export default class HomeScreen extends Component {
         />
         {selectedPark ? (
           <InfoContainer
+            selectedPark={selectedPark}
             resetMap={this.resetMap}
             trails={trails}
             updateIndex={this.updateIndex}
