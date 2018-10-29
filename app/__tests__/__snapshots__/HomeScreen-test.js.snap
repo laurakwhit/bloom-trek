@@ -29,8 +29,10 @@ ShallowWrapper {
             }
           }
           handleSelectedPark={[Function]}
+          handleSelectedTrail={[Function]}
           location={null}
           parks={Array []}
+          trails={Array []}
         />,
         <Component />,
       ],
@@ -61,8 +63,10 @@ ShallowWrapper {
             "longitudeDelta": 1,
           },
           "handleSelectedPark": [Function],
+          "handleSelectedTrail": [Function],
           "location": null,
           "parks": Array [],
+          "trails": Array [],
         },
         "ref": null,
         "rendered": null,
@@ -98,8 +102,10 @@ ShallowWrapper {
               }
             }
             handleSelectedPark={[Function]}
+            handleSelectedTrail={[Function]}
             location={null}
             parks={Array []}
+            trails={Array []}
           />,
           <Component />,
         ],
@@ -130,8 +136,10 @@ ShallowWrapper {
               "longitudeDelta": 1,
             },
             "handleSelectedPark": [Function],
+            "handleSelectedTrail": [Function],
             "location": null,
             "parks": Array [],
+            "trails": Array [],
           },
           "ref": null,
           "rendered": null,
