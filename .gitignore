@@ -6,3 +6,5 @@ assets/.DS_Store
 # API
 
 key.js
+
+.env
