@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, Text, StyleSheet, Image,
+  View, Text, StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { MapView } from 'expo';
