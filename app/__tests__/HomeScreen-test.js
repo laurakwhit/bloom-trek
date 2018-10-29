@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
 const setupGoogleMock = () => {
-  /*** Mock Google Maps JavaScript API ***/
   const google = {
     maps: {
       places: {
