@@ -12,10 +12,10 @@ export default class TrailDetail extends Component {
   }
 
   render() {
-    const { trailInfo } = this.props;
+    const { selectedTrail } = this.props;
     const {
       name, difficulty, status, summary, length, trail_url, trail_img_url,
-    } = trailInfo;
+    } = selectedTrail;
     return (
       <GestureRecognizer style={styles.container} onSwipeRight={state => this.onSwipeRight(state)}>
         <Text onPress={() => { Linking.openURL(trail_url); }}>{name}</Text>
@@ -47,5 +47,5 @@ const styles = StyleSheet.create({
 
 TrailDetail.propTypes = {
   resetSelectedTrail: PropTypes.func,
-  trailInfo: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  selectedTrail: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };

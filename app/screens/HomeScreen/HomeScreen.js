@@ -5,7 +5,7 @@ import Geocoder from 'react-native-geocoding';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
-import { getAllParks } from '../../utils/api';
+import { getAllParks, getParkTrails } from '../../utils/api';
 import { GOOGLE_KEY } from '../../../key';
 
 Geocoder.init(GOOGLE_KEY);
@@ -16,6 +16,9 @@ export default class HomeScreen extends Component {
     errorMessage: null,
     parks: [],
     selectedPark: null,
+    trails: [],
+    selectedTrail: null,
+    selectedIndex: 0,
     deltas: {
       latitudeDelta: 1,
       longitudeDelta: 1,
@@ -48,16 +51,18 @@ export default class HomeScreen extends Component {
     this.setState({ parks });
   };
 
-  handleSelectedPark = (id) => {
+  handleSelectedPark = async (id) => {
     const { parks } = this.state;
     const matchingPark = parks.find(park => park.id === id);
+    const trails = await getParkTrails(id);
     this.setState({
       selectedPark: id,
       location: matchingPark.coords,
       deltas: {
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        latitudeDelta: 0.3,
+        longitudeDelta: 0.3,
       },
+      trails,
     });
   };
 
@@ -69,8 +74,19 @@ export default class HomeScreen extends Component {
         latitudeDelta: 1,
         longitudeDelta: 1,
       },
+      trails: [],
     });
   };
+
+  handleSelectedTrail = (id) => {
+    const { trails } = this.state;
+    const selectedTrail = trails.find(trail => trail.id === id);
+    this.setState({ selectedTrail, selectedIndex: 2 });
+  }
+
+  resetSelectedTrail = () => {
+    this.setState({ selectedTrail: null });
+  }
 
   updateLocation = (input) => {
     Geocoder.from(input)
@@ -87,9 +103,16 @@ export default class HomeScreen extends Component {
       .catch(error => console.warn(error));
   };
 
+  updateIndex = (selectedIndex) => {
+    this.setState({ selectedIndex });
+    if (selectedIndex === 1) {
+      this.resetMap();
+    }
+  };
+
   render() {
     const {
-      location, parks, selectedPark, deltas,
+      location, parks, selectedPark, deltas, trails, selectedTrail, selectedIndex,
     } = this.state;
     return (
       <View style={styles.container}>
@@ -98,10 +121,20 @@ export default class HomeScreen extends Component {
           location={location}
           parks={parks}
           deltas={deltas}
+          trails={trails}
+          handleSelectedTrail={this.handleSelectedTrail}
           handleSelectedPark={this.handleSelectedPark}
         />
         {selectedPark ? (
-          <InfoContainer selectedPark={selectedPark} resetMap={this.resetMap} />
+          <InfoContainer
+            resetMap={this.resetMap}
+            trails={trails}
+            updateIndex={this.updateIndex}
+            selectedIndex={selectedIndex}
+            selectedTrail={selectedTrail}
+            handleSelectedTrail={this.handleSelectedTrail}
+            resetSelectedTrail={this.resetSelectedTrail}
+          />
         ) : (
           <View />
         )}

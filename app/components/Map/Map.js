@@ -11,22 +11,39 @@ const initialRegion = {
 const { Marker } = MapView;
 
 export default class Map extends Component {
-  handleMarkerPress = (id) => {
+  handleParkMarkerPress = (id) => {
     const { handleSelectedPark } = this.props;
     handleSelectedPark(id);
   };
 
-  renderMarkers = () => {
+  handleTrailMarkerPress = (id) => {
+    const { handleSelectedTrail } = this.props;
+    handleSelectedTrail(id);
+  };
+
+  renderParkMarkers = () => {
     const { parks } = this.props;
     return parks.map(park => (
       <Marker
         key={park.id}
         title={park.name}
         coordinate={park.coords}
-        onPress={() => this.handleMarkerPress(park.id)}
+        onPress={() => this.handleParkMarkerPress(park.id)}
       />
     ));
   };
+
+  renderTrailMarkers = () => {
+    const { trails } = this.props;
+    return trails.map(trail => (
+      <Marker
+        key={trail.id}
+        title={trail.name}
+        coordinate={{ latitude: trail.latitude, longitude: trail.longitude }}
+        onPress={() => this.handleTrailMarkerPress(trail.id)}
+      />
+    ));
+  }
 
   render() {
     const { location, deltas } = this.props;
@@ -51,7 +68,8 @@ export default class Map extends Component {
         showsUserLocation
         showsMyLocationButton
       >
-        {this.renderMarkers()}
+        {this.renderParkMarkers()}
+        {this.renderTrailMarkers()}
       </MapView>
     );
   }
@@ -68,8 +86,10 @@ const styles = StyleSheet.create({
 Map.propTypes = {
   parks: PropTypes.arrayOf(PropTypes.object),
   handleSelectedPark: PropTypes.func,
+  handleSelectedTrail: PropTypes.func,
   location: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ),
   deltas: PropTypes.objectOf(PropTypes.number),
+  trails: PropTypes.arrayOf(PropTypes.object),
 };
