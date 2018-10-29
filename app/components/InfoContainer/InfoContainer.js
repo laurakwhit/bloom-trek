@@ -60,17 +60,17 @@ export default class InfoContainer extends Component {
     return (
       <View style={styles.container}>
         {selectedIndex === 0 && !selectedFlower
-          ? <FlowerList flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
+          ? <FlowerList style={styles.list} flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
           : <View />}
         {selectedIndex === 0 && selectedFlower
-          ? <FlowerDetail flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
+          ? <FlowerDetail style={styles.list} flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
           : <View />}
         {selectedIndex === 2 && selectedTrail
-          ? <TrailDetail selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
+          ? <TrailDetail style={styles.list} selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
           : <View />}
         {selectedIndex === 2 && !selectedTrail
-          ? <TrailList trails={trails} handleSelectedTrail={handleSelectedTrail} /> : <View />}
-        <Nav updateIndex={updateIndex} selectedIndex={selectedIndex} />
+          ? <TrailList style={styles.list} trails={trails} handleSelectedTrail={handleSelectedTrail} /> : <View />}
+        <Nav style={styles.nav} updateIndex={updateIndex} selectedIndex={selectedIndex} />
       </View>
     );
   }
@@ -81,7 +81,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    height: 225,
+    flex: 5,
+  },
+  nav: {
+    flex: 1,
   },
 });
 

@@ -4,7 +4,7 @@ import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const TrailList = ({ trails, handleSelectedTrail }) => (
-  <ScrollView contentContainerStyle={styles.container}>
+  <ScrollView style={styles.container}>
     <List>
       {
       trails.map((trail) => {
@@ -39,7 +39,7 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
 
 const styles = StyleSheet.create({
   container: {
-    height: 225,
+    height: '85%',
   },
 });
 
