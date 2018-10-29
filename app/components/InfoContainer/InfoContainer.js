@@ -23,6 +23,12 @@ export default class InfoContainer extends Component {
     });
   };
 
+  componentDidMount() {
+    const { selectedPark } = this.props;
+
+    this.getFlowers(selectedPark);
+  }
+
 
   render() {
     const { selectedIndex, updateIndex } = this.props;
