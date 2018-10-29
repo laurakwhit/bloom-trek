@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import TrailList from '../TrailList/TrailList';
 import TrailDetail from '../TrailDetail/TrailDetail';
 import FlowerList from '../FlowerList/FlowerList';
 import FlowerDetail from '../FlowerDetail/FlowerDetail';
-import Nav from '../Nav/Nav'  ;
+import Nav from '../Nav/Nav';
 import { getFlowersByMonth } from '../../utils/api';
 
 export default class InfoContainer extends Component {
@@ -17,43 +17,43 @@ export default class InfoContainer extends Component {
     };
   }
 
-  getFlowers = async (id) => {
-    const date = new Date();
-    const monthNumber = date.getMonth() + 1;
-    const flowers = await getFlowersByMonth(id, 5);
-
-    this.setState({
-      flowers
-    });
-  };
-
   componentDidMount() {
     const { selectedPark } = this.props;
 
     this.getFlowers(selectedPark);
   }
 
+  getFlowers = async (id) => {
+    const date = new Date();
+    const monthNumber = date.getMonth() + 1;
+    const flowers = await getFlowersByMonth(id, monthNumber);
+
+    this.setState({
+      flowers,
+    });
+  };
+
   resetSelectedFlower = () => {
     this.setState({
-      selectedFlower: null
+      selectedFlower: null,
     });
   };
 
   goToFlowerDetails = (selectedFlower) => {
     this.setState({
-      selectedFlower
+      selectedFlower,
     });
   };
 
   render() {
     const { flowers, selectedFlower } = this.state;
     const {
-      trails, 
-      selectedTrail, 
-      handleSelectedTrail, 
+      trails,
+      selectedTrail,
+      handleSelectedTrail,
       resetSelectedTrail,
-      selectedIndex, 
-      updateIndex
+      selectedIndex,
+      updateIndex,
     } = this.props;
     const flowerInfo = flowers.find(flower => flower.id === selectedFlower);
 
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
 InfoContainer.propTypes = {
   trails: PropTypes.arrayOf(PropTypes.object),
   selectedIndex: PropTypes.number,
+  selectedPark: PropTypes.number,
   updateIndex: PropTypes.func,
   selectedTrail: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   handleSelectedTrail: PropTypes.func,
