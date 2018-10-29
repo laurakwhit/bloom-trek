@@ -13,6 +13,16 @@ export default class InfoContainer extends Component {
     };
   }
 
+  getFlowers = async (id) => {
+    const date = new Date();
+    const monthNumber = date.getMonth() + 1;
+    const flowers = await getFlowersByMonth(id, 5);
+
+    this.setState({
+      flowers
+    });
+  };
+
 
   render() {
     const { selectedIndex, updateIndex } = this.props;
