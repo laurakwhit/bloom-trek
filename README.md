@@ -4,21 +4,25 @@
 
 ## Set Up
 
-Download NodeJS
+1.  Download NodeJS
 
-Download Xcode
+1.  Download Xcode
 
-npm install expo-cli --global
+1.  npm install expo-cli --global
 
-clone down this repo
+1.  clone down this repo
 
-cd bloom-trek
+1.  cd bloom-trek
 
-expo start
+1.  touch .env and open
 
-Localhost window will pop up, choose Run on iOS simulator
+1.  Add your google API key as follows  ``export const GOOGLE_KEY = 'your api key'``
 
-Open Expo Client on your device. Use it to scan the QR code printed by exp start in localhost window.
+1.  expo start
+
+1.  Localhost window will pop up, choose Run on iOS simulator
+
+1.  Open Expo Client on your device. Use it to scan the QR code printed by exp start in localhost window.
 
 ## Wireframes
 
