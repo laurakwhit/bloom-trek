@@ -38,7 +38,7 @@ export default class FlowerDetail extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 225,
+    height: '85%',
   },
   image: {
     height: 50,

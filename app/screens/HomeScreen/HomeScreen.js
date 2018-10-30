@@ -19,8 +19,8 @@ export default class HomeScreen extends Component {
     selectedTrail: null,
     selectedIndex: 0,
     deltas: {
-      latitudeDelta: 1,
-      longitudeDelta: 1,
+      latitudeDelta: 0.9,
+      longitudeDelta: 0.9,
     },
   };
 
@@ -106,6 +106,7 @@ export default class HomeScreen extends Component {
     this.setState({ selectedIndex });
     if (selectedIndex === 1) {
       this.resetMap();
+      this.setState({ selectedIndex: 0 });
     }
   };
 

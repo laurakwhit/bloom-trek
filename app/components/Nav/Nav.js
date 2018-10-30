@@ -10,7 +10,7 @@ const Nav = ({ selectedIndex, updateIndex }) => {
       onPress={updateIndex}
       selectedIndex={selectedIndex}
       buttons={buttons}
-      containerStyle={{ flex: 1 }}
+      containerStyle={{ height: '15%' }}
     />
   );
 };

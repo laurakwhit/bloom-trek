@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { MapView } from 'expo';
 
@@ -28,6 +30,7 @@ export default class Map extends Component {
         key={park.id}
         title={park.name}
         coordinate={park.coords}
+        image={require('../../../assets/icons/plant.png')}
         onPress={() => this.handleParkMarkerPress(park.id)}
       />
     ));
