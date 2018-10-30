@@ -36,4 +36,12 @@ describe('TrailDetail', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  describe('onSwipeRight', () => {
+    it('should invoke resetSelectedTrail when invoked', () => {
+      wrapper.instance().onSwipeRight();
+
+      expect(mockResetSelectedTrail).toHaveBeenCalled();
+    });
+  });
 });
