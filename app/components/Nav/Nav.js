@@ -1,9 +1,13 @@
 import React from 'react';
+import { Image, StyleSheet } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const Nav = ({ selectedIndex, updateIndex }) => {
-  const buttons = ['Flowers', 'Home', 'Trails'];
+  const flowers = () => <Image style={styles.icon} source={require('../../../assets/icons/flower.png')} />;
+  const home = () => <Image style={styles.icon} source={require('../../../assets/icons/map.png')} />;
+  const trails = () => <Image style={styles.icon} source={require('../../../assets/icons/trails.png')} />;
+  const buttons = [{ element: flowers }, { element: home }, { element: trails }];
 
   return (
     <ButtonGroup
@@ -14,6 +18,12 @@ const Nav = ({ selectedIndex, updateIndex }) => {
     />
   );
 };
+
+const styles = StyleSheet.create({
+  icon: { 
+    height: 35, 
+    width: 35 },
+});
 
 Nav.propTypes = {
   selectedIndex: PropTypes.number,
