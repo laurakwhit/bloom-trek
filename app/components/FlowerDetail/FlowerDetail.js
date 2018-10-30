@@ -31,9 +31,18 @@ export default class FlowerDetail extends Component {
         </View>
         <ScrollView style={styles.text}>
           <Text style={styles.info}><Text style={styles.emphasis}>Name: </Text>{name}</Text>
-          <Text style={styles.info}><Text style={styles.emphasis}>Scientific Name: </Text>{scientific_name}</Text>
-          <Text style={styles.info}><Text style={styles.emphasis}>Habitat: </Text>{habitat}</Text>
-          <Text style={styles.info}><Text style={styles.emphasis}>Description: </Text>{description}</Text>
+          <Text style={styles.info}>
+            <Text style={styles.emphasis}>Scientific Name: </Text>
+            {scientific_name}
+          </Text>
+          <Text style={styles.info}>
+            <Text style={styles.emphasis}>Habitat: </Text>
+            {habitat}
+          </Text>
+          <Text style={styles.info}>
+            <Text style={styles.emphasis}>Description: </Text>
+            {description}
+          </Text>
         </ScrollView>
       </GestureRecognizer>
     );

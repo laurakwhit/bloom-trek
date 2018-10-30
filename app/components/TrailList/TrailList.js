@@ -23,7 +23,11 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
             break;
         }
         return (
-          <TouchableOpacity key={trail.name} activeOpacity={0.5} onPress={() => handleSelectedTrail(trail.id)}>
+          <TouchableOpacity
+            key={trail.name}
+            activeOpacity={0.5}
+            onPress={() => handleSelectedTrail(trail.id)}
+          >
             <ListItem
               avatar={icon}
               title={trail.name}

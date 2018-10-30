@@ -5,10 +5,14 @@ import PropTypes from 'prop-types';
 
 const FlowerList = ({ flowers, goToFlowerDetails }) => (
   <ScrollView>
-    <List containerStyle={styles.list} >
+    <List containerStyle={styles.list}>
       {
         flowers.map(flower => (
-          <TouchableOpacity key={flower.name} activeOpacity={0.5} onPress={() => goToFlowerDetails(flower.id)}>
+          <TouchableOpacity
+            key={flower.name}
+            activeOpacity={0.5}
+            onPress={() => goToFlowerDetails(flower.id)}
+          >
             <ListItem
               roundAvatar
               avatar={{ uri: flower.flower_img_url }}

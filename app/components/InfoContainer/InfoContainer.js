@@ -64,7 +64,12 @@ export default class InfoContainer extends Component {
             ? <FlowerList flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
             : <View />}
           {selectedIndex === 0 && selectedFlower
-            ? <FlowerDetail flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
+            ? (
+              <FlowerDetail
+                flowerInfo={flowerInfo}
+                resetSelectedFlower={this.resetSelectedFlower}
+              />
+            )
             : <View />}
           {selectedIndex === 2 && selectedTrail
             ? <TrailDetail selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
