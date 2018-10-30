@@ -35,9 +35,24 @@ export default class Search extends Component {
 
     return (
       <SearchBar
+        round
+        containerStyle={
+          {
+            backgroundColor: '#F9F5ED',
+            borderBottomWidth: 0,
+            borderTopWidth: 0,
+
+          }
+        }
+        inputStyle={
+          {
+            backgroundColor: '#c1e6b1',
+            color: '#005900',
+          }
+        }
+        clearIcon={{ color: '#005900' }}
         style={styles.search}
         showLoading
-        clearIcon={{ color: 'red' }}
         searchIcon
         onChangeText={input => this.setState({ searchInput: input })}
         onCancel={this.handleCancel}
@@ -52,7 +67,6 @@ export default class Search extends Component {
 const styles = StyleSheet.create({
   search: {
     flex: 1,
-    top: 100,
   },
 });
 
