@@ -9,7 +9,6 @@ import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks, getParkTrails } from '../../utils/api';
 
-console.log(process.env.GOOGLE_KEY);
 Geocoder.init(GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
@@ -141,19 +140,11 @@ export default class HomeScreen extends Component {
           backgroundColor="white"
           outerContainerStyles={{ padding: 0 }}
           containerStyle={{ margin: 0 }}
-          centerComponent={
-                    {
-                      text: 'Bloom Trek',
-                      style: {
-                        color: '#1e231b',
-                        fontSize: 30,
-                        fontFamily: 'bloom',
-                        padding: 0,
-                      },
-                    }
-                  }
+          centerComponent={{
+            text: 'Bloom Trek',
+            style: styles.header,
+          }}
         />
-
         <Search updateLocation={this.updateLocation} />
         <Map
           location={location}
@@ -188,6 +179,9 @@ const styles = StyleSheet.create({
     height: 50,
   },
   header: {
-    alignItems: 'center',
+    color: '#1e231b',
+    fontSize: 30,
+    fontFamily: 'bloom',
+    padding: 0,
   },
 });
