@@ -9,6 +9,7 @@ const FlowerList = ({ flowers, goToFlowerDetails }) => (
       {
         flowers.map(flower => (
           <ListItem
+          roundAvatar
             avatar={{ uri: flower.flower_img_url }}
             key={flower.name}
             title={flower.name}

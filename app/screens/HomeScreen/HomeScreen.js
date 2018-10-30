@@ -61,6 +61,7 @@ export default class HomeScreen extends Component {
         latitudeDelta: 0.3,
         longitudeDelta: 0.3,
       },
+      selectedTrail: null,
       trails,
     });
   };
