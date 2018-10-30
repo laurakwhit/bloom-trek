@@ -26,7 +26,7 @@ export default class TrailDetail extends Component {
         </View>
         <View style={styles.text}>
           <Text style={styles.header} onPress={() => { Linking.openURL(trail_url); }}>
-            {`${name }   `}
+            {`${name}   `}
             <Image style={{ height: 18, width: 18 }} source={require('../../../assets/icons/arrow.png')} />
           </Text>
           <Text><Text style={{ fontWeight: 'bold' }}>Difficulty: </Text>{difficulty}</Text>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     marginBottom: 5,
-    color: '#b55760',
+    color: '#005900',
     fontSize: 18,
     fontWeight: 'bold',
   },

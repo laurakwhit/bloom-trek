@@ -19,6 +19,7 @@ const Nav = ({ selectedIndex, updateIndex }) => {
         borderWidth: 0,
         width: '100%',
         marginLeft: 0,
+        marginTop: 0,
       }}
       innerBorderStyle={{ color: 'transparent' }}
       buttonStyle={{

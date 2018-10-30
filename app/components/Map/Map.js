@@ -30,7 +30,7 @@ export default class Map extends Component {
         key={park.id}
         title={park.name}
         coordinate={park.coords}
-        image={require('../../../assets/icons/plant.png')}
+        image={require('../../../assets/icons/park-pin.png')}
         onPress={() => this.handleParkMarkerPress(park.id)}
       />
     ));
@@ -43,7 +43,7 @@ export default class Map extends Component {
         key={trail.id}
         title={trail.name}
         coordinate={{ latitude: trail.latitude, longitude: trail.longitude }}
-        image={require('../../../assets/icons/boot.png')}
+        image={require('../../../assets/icons/trail-pin.png')}
         onPress={() => this.handleTrailMarkerPress(trail.id)}
       />
     ));

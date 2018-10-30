@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   emphasis: {
-    color: '#b55760',
+    color: '#005900',
     fontSize: 15,
     fontWeight: 'bold',
   },
