@@ -20,9 +20,18 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "clearIcon": Object {
-        "color": "red",
+        "color": "#005900",
+      },
+      "containerStyle": Object {
+        "backgroundColor": "#F9F5ED",
+        "borderBottomWidth": 0,
+        "borderTopWidth": 0,
       },
       "icon": Object {},
+      "inputStyle": Object {
+        "backgroundColor": "#c1e6b1",
+        "color": "#005900",
+      },
       "lightTheme": false,
       "loadingIcon": Object {},
       "noIcon": false,
@@ -31,13 +40,12 @@ ShallowWrapper {
       "onSubmitEditing": [Function],
       "placeholder": "Search location",
       "placeholderTextColor": "#86939e",
-      "round": false,
+      "round": true,
       "searchIcon": true,
       "showLoading": true,
       "showLoadingIcon": false,
       "style": Object {
         "flex": 1,
-        "top": 100,
       },
       "value": "",
     },
@@ -52,9 +60,18 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "clearIcon": Object {
-          "color": "red",
+          "color": "#005900",
+        },
+        "containerStyle": Object {
+          "backgroundColor": "#F9F5ED",
+          "borderBottomWidth": 0,
+          "borderTopWidth": 0,
         },
         "icon": Object {},
+        "inputStyle": Object {
+          "backgroundColor": "#c1e6b1",
+          "color": "#005900",
+        },
         "lightTheme": false,
         "loadingIcon": Object {},
         "noIcon": false,
@@ -63,13 +80,12 @@ ShallowWrapper {
         "onSubmitEditing": [Function],
         "placeholder": "Search location",
         "placeholderTextColor": "#86939e",
-        "round": false,
+        "round": true,
         "searchIcon": true,
         "showLoading": true,
         "showLoadingIcon": false,
         "style": Object {
           "flex": 1,
-          "top": 100,
         },
         "value": "",
       },
