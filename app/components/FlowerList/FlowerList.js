@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
@@ -8,16 +8,16 @@ const FlowerList = ({ flowers, goToFlowerDetails }) => (
     <List containerStyle={styles.list} >
       {
         flowers.map(flower => (
-          <ListItem
-          roundAvatar
-            avatar={{ uri: flower.flower_img_url }}
-            key={flower.name}
-            title={flower.name}
-            subtitle={flower.scientific_name}
-            description={flower.description}
-            habitat={flower.habitat}
-            onPress={() => goToFlowerDetails(flower.id)}
-          />
+          <TouchableOpacity key={flower.name} activeOpacity={0.5} onPress={() => goToFlowerDetails(flower.id)}>
+            <ListItem
+              roundAvatar
+              avatar={{ uri: flower.flower_img_url }}
+              title={flower.name}
+              subtitle={flower.scientific_name}
+              description={flower.description}
+              habitat={flower.habitat}
+            />
+          </TouchableOpacity>
         ))
       }
     </List>
