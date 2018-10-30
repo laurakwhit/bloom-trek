@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
@@ -23,13 +23,13 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
             break;
         }
         return (
+          <TouchableOpacity key={trail.name} activeOpacity={0.5} onPress={() => handleSelectedTrail(trail.id)}>
           <ListItem
             avatar={icon}
-            key={trail.name}
             title={trail.name}
             subtitle={`${trail.length} miles`}
-            onPress={() => handleSelectedTrail(trail.id)}
           />
+          </TouchableOpacity>
         );
       })
       }
