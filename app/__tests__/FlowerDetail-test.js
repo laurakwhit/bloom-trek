@@ -3,10 +3,12 @@ import { shallow } from 'enzyme';
 import FlowerDetail from '../components/FlowerDetail/FlowerDetail';
 
 describe('FlowerDetail', () => {
+  let mockResetSelectedFlower;
   let wrapper;
   let mockFlowerInfo;
 
   beforeEach(() => {
+    mockResetSelectedFlower = jest.fn();
     mockFlowerInfo = {
       id: 71,
       flower_img_url: 'http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg',
@@ -19,11 +21,22 @@ describe('FlowerDetail', () => {
       habitat: 'Open areas around former homesteads.',
     };
     wrapper = shallow(
-      <FlowerDetail flowerInfo={mockFlowerInfo} />,
+      <FlowerDetail
+        flowerInfo={mockFlowerInfo}
+        resetSelectedFlower={mockResetSelectedFlower}
+      />,
     );
   });
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('onSwipeRight', () => {
+    it('should invoke resetSelectedFlower when invoked', () => {
+      wrapper.instance().onSwipeRight();
+
+      expect(mockResetSelectedFlower).toHaveBeenCalled();
+    });
   });
 });

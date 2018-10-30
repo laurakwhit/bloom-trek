@@ -17,6 +17,7 @@ ShallowWrapper {
         "scientific_name": "Linaria vulgaris",
       }
     }
+    resetSelectedFlower={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
