@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Location, Permissions } from 'expo';
+import { View, StyleSheet, Text } from 'react-native';
+import { Header } from 'react-native-elements';
+import { Location, Permissions, Font } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import { GOOGLE_KEY } from 'react-native-dotenv';
 import Map from '../../components/Map/Map';
@@ -23,9 +24,15 @@ export default class HomeScreen extends Component {
       latitudeDelta: 0.9,
       longitudeDelta: 0.9,
     },
+    isFontLoaded: false,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    await Font.loadAsync({
+      bloom: require('../../../assets/fonts/Pacifico-Regular.ttf'),
+    });
+
+    this.setState({ isFontLoaded: true });
     this.getCurrentLocation();
     this.getParks();
   }
@@ -114,10 +121,38 @@ export default class HomeScreen extends Component {
 
   render() {
     const {
-      location, parks, selectedPark, deltas, trails, selectedTrail, selectedIndex,
+      location,
+      parks,
+      selectedPark,
+      deltas,
+      trails,
+      selectedTrail,
+      selectedIndex,
+      isFontLoaded,
     } = this.state;
+
+    if (!isFontLoaded) {
+      return <Text>broken</Text>;
+    }
     return (
       <View style={styles.container}>
+        <Header
+          backgroundColor="white"
+          outerContainerStyles={{ padding: 0 }}
+          containerStyle={{ margin: 0 }}
+          centerComponent={
+                    {
+                      text: 'Bloom Trek',
+                      style: {
+                        color: '#1e231b',
+                        fontSize: 30,
+                        fontFamily: 'bloom',
+                        padding: 0,
+                      },
+                    }
+                  }
+        />
+
         <Search updateLocation={this.updateLocation} />
         <Map
           location={location}
@@ -149,5 +184,9 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: 50,
+  },
+  header: {
+    alignItems: 'center',
   },
 });
