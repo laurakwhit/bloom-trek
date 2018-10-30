@@ -105,7 +105,12 @@ InfoContainer.propTypes = {
   selectedIndex: PropTypes.number,
   selectedPark: PropTypes.number,
   updateIndex: PropTypes.func,
-  selectedTrail: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  selectedTrail: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.object]),
+  ),
   handleSelectedTrail: PropTypes.func,
   resetSelectedTrail: PropTypes.func,
 };

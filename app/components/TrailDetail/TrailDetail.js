@@ -68,5 +68,10 @@ const styles = StyleSheet.create({
 
 TrailDetail.propTypes = {
   resetSelectedTrail: PropTypes.func,
-  selectedTrail: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  selectedTrail: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.object]),
+  ),
 };
