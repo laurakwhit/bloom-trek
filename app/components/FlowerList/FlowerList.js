@@ -4,8 +4,8 @@ import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const FlowerList = ({ flowers, goToFlowerDetails }) => (
-  <ScrollView style={styles.container} automaticallyAdjustContentInsets={false}>
-    <List>
+  <ScrollView>
+    <List containerStyle={styles.list} >
       {
         flowers.map(flower => (
           <ListItem
@@ -24,9 +24,10 @@ const FlowerList = ({ flowers, goToFlowerDetails }) => (
 );
 
 const styles = StyleSheet.create({
-  container: {
-    height: '85%',
-    // marginTop: -20,
+  list: {
+    marginTop: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
   },
 });
 

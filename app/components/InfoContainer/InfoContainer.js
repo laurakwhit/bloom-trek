@@ -63,14 +63,14 @@ export default class InfoContainer extends Component {
           ? <FlowerList style={styles.list} flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
           : <View />}
         {selectedIndex === 0 && selectedFlower
-          ? <FlowerDetail style={styles.list} flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
+          ? <FlowerDetail flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
           : <View />}
         {selectedIndex === 2 && selectedTrail
-          ? <TrailDetail style={styles.list} selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
+          ? <TrailDetail selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
           : <View />}
         {selectedIndex === 2 && !selectedTrail
           ? <TrailList style={styles.list} trails={trails} handleSelectedTrail={handleSelectedTrail} /> : <View />}
-        <Nav style={styles.nav} updateIndex={updateIndex} selectedIndex={selectedIndex} />
+        <Nav updateIndex={updateIndex} selectedIndex={selectedIndex} />
       </View>
     );
   }
@@ -81,10 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    flex: 5,
-  },
-  nav: {
-    flex: 1,
+    height: '85%',
   },
 });
 

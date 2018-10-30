@@ -4,8 +4,8 @@ import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const TrailList = ({ trails, handleSelectedTrail }) => (
-  <ScrollView style={styles.container}>
-    <List>
+  <ScrollView>
+    <List containerStyle={styles.list} >
       {
       trails.map((trail) => {
         let icon;
@@ -38,8 +38,10 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
 );
 
 const styles = StyleSheet.create({
-  container: {
-    height: '85%',
+  list: {
+    marginTop: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
   },
 });
 
