@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowerList should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FlowerList
+    flowers={
+      Array [
+        Object {
+          "bloom_end": 10,
+          "bloom_start": 6,
+          "common_name": "Yellow Toadflax",
+          "description": "Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering).",
+          "flower_img_url": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+          "habitat": "Open areas around former homesteads.",
+          "id": 71,
+          "name": "Butter And Eggs",
+          "scientific_name": "Linaria vulgaris",
+        },
+      ]
+    }
+    goToFlowerDetails={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <List
+        containerStyle={
+          Object {
+            "borderBottomWidth": 0,
+            "borderTopWidth": 0,
+            "marginTop": 0,
+          }
+        }
+      >
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={[Function]}
+        >
+          <ListItem
+            avatar={
+              Object {
+                "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+              }
+            }
+            chevronColor="#bdc6cf"
+            description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+            disabled={false}
+            habitat="Open areas around former homesteads."
+            hideChevron={false}
+            leftIconUnderlayColor="white"
+            rightIcon={
+              Object {
+                "name": "chevron-right",
+              }
+            }
+            rightTitleNumberOfLines={1}
+            roundAvatar={true}
+            subtitle="Linaria vulgaris"
+            subtitleNumberOfLines={1}
+            switchButton={false}
+            textInputEditable={true}
+            title="Butter And Eggs"
+            titleNumberOfLines={1}
+            underlayColor="white"
+          />
+        </TouchableOpacity>
+      </List>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={[Function]}
+          >
+            <ListItem
+              avatar={
+                Object {
+                  "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                }
+              }
+              chevronColor="#bdc6cf"
+              description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+              disabled={false}
+              habitat="Open areas around former homesteads."
+              hideChevron={false}
+              leftIconUnderlayColor="white"
+              rightIcon={
+                Object {
+                  "name": "chevron-right",
+                }
+              }
+              rightTitleNumberOfLines={1}
+              roundAvatar={true}
+              subtitle="Linaria vulgaris"
+              subtitleNumberOfLines={1}
+              switchButton={false}
+              textInputEditable={true}
+              title="Butter And Eggs"
+              titleNumberOfLines={1}
+              underlayColor="white"
+            />
+          </TouchableOpacity>,
+        ],
+        "containerStyle": Object {
+          "borderBottomWidth": 0,
+          "borderTopWidth": 0,
+          "marginTop": 0,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Butter And Eggs",
+          "nodeType": "class",
+          "props": Object {
+            "activeOpacity": 0.5,
+            "children": <ListItem
+              avatar={
+                Object {
+                  "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                }
+              }
+              chevronColor="#bdc6cf"
+              description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+              disabled={false}
+              habitat="Open areas around former homesteads."
+              hideChevron={false}
+              leftIconUnderlayColor="white"
+              rightIcon={
+                Object {
+                  "name": "chevron-right",
+                }
+              }
+              rightTitleNumberOfLines={1}
+              roundAvatar={true}
+              subtitle="Linaria vulgaris"
+              subtitleNumberOfLines={1}
+              switchButton={false}
+              textInputEditable={true}
+              title="Butter And Eggs"
+              titleNumberOfLines={1}
+              underlayColor="white"
+            />,
+            "onPress": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "avatar": Object {
+                "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+              },
+              "chevronColor": "#bdc6cf",
+              "description": "Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering).",
+              "disabled": false,
+              "habitat": "Open areas around former homesteads.",
+              "hideChevron": false,
+              "leftIconUnderlayColor": "white",
+              "rightIcon": Object {
+                "name": "chevron-right",
+              },
+              "rightTitleNumberOfLines": 1,
+              "roundAvatar": true,
+              "subtitle": "Linaria vulgaris",
+              "subtitleNumberOfLines": 1,
+              "switchButton": false,
+              "textInputEditable": true,
+              "title": "Butter And Eggs",
+              "titleNumberOfLines": 1,
+              "underlayColor": "white",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [MockFunction],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <List
+          containerStyle={
+            Object {
+              "borderBottomWidth": 0,
+              "borderTopWidth": 0,
+              "marginTop": 0,
+            }
+          }
+        >
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={[Function]}
+          >
+            <ListItem
+              avatar={
+                Object {
+                  "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                }
+              }
+              chevronColor="#bdc6cf"
+              description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+              disabled={false}
+              habitat="Open areas around former homesteads."
+              hideChevron={false}
+              leftIconUnderlayColor="white"
+              rightIcon={
+                Object {
+                  "name": "chevron-right",
+                }
+              }
+              rightTitleNumberOfLines={1}
+              roundAvatar={true}
+              subtitle="Linaria vulgaris"
+              subtitleNumberOfLines={1}
+              switchButton={false}
+              textInputEditable={true}
+              title="Butter And Eggs"
+              titleNumberOfLines={1}
+              underlayColor="white"
+            />
+          </TouchableOpacity>
+        </List>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={[Function]}
+            >
+              <ListItem
+                avatar={
+                  Object {
+                    "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                  }
+                }
+                chevronColor="#bdc6cf"
+                description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+                disabled={false}
+                habitat="Open areas around former homesteads."
+                hideChevron={false}
+                leftIconUnderlayColor="white"
+                rightIcon={
+                  Object {
+                    "name": "chevron-right",
+                  }
+                }
+                rightTitleNumberOfLines={1}
+                roundAvatar={true}
+                subtitle="Linaria vulgaris"
+                subtitleNumberOfLines={1}
+                switchButton={false}
+                textInputEditable={true}
+                title="Butter And Eggs"
+                titleNumberOfLines={1}
+                underlayColor="white"
+              />
+            </TouchableOpacity>,
+          ],
+          "containerStyle": Object {
+            "borderBottomWidth": 0,
+            "borderTopWidth": 0,
+            "marginTop": 0,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Butter And Eggs",
+            "nodeType": "class",
+            "props": Object {
+              "activeOpacity": 0.5,
+              "children": <ListItem
+                avatar={
+                  Object {
+                    "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                  }
+                }
+                chevronColor="#bdc6cf"
+                description="Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering)."
+                disabled={false}
+                habitat="Open areas around former homesteads."
+                hideChevron={false}
+                leftIconUnderlayColor="white"
+                rightIcon={
+                  Object {
+                    "name": "chevron-right",
+                  }
+                }
+                rightTitleNumberOfLines={1}
+                roundAvatar={true}
+                subtitle="Linaria vulgaris"
+                subtitleNumberOfLines={1}
+                switchButton={false}
+                textInputEditable={true}
+                title="Butter And Eggs"
+                titleNumberOfLines={1}
+                underlayColor="white"
+              />,
+              "onPress": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "avatar": Object {
+                  "uri": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+                },
+                "chevronColor": "#bdc6cf",
+                "description": "Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering).",
+                "disabled": false,
+                "habitat": "Open areas around former homesteads.",
+                "hideChevron": false,
+                "leftIconUnderlayColor": "white",
+                "rightIcon": Object {
+                  "name": "chevron-right",
+                },
+                "rightTitleNumberOfLines": 1,
+                "roundAvatar": true,
+                "subtitle": "Linaria vulgaris",
+                "subtitleNumberOfLines": 1,
+                "switchButton": false,
+                "textInputEditable": true,
+                "title": "Butter And Eggs",
+                "titleNumberOfLines": 1,
+                "underlayColor": "white",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [MockFunction],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
