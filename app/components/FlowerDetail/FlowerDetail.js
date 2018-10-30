@@ -42,7 +42,7 @@ export default class FlowerDetail extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: '85%',
+    height: '100%',
   },
   emphasis: {
     color: '#b55760',
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 5,
-    marginBottom: 10,
   },
   imageContainer: {
     height: '50%',

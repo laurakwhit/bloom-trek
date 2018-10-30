@@ -26,12 +26,12 @@ export default class TrailDetail extends Component {
         </View>
         <View style={styles.text}>
           <Text style={styles.header} onPress={() => { Linking.openURL(trail_url); }}>
-            {name + '   '}
-            <Image style={{ height: 18, width: 18 }} source={require('../../../assets/icons/arrow.png')}/>
+            {`${name }   `}
+            <Image style={{ height: 18, width: 18 }} source={require('../../../assets/icons/arrow.png')} />
           </Text>
-          <Text><Text style={{ fontWeight: 'bold'}}>Difficulty: </Text>{difficulty}</Text>
-          <Text><Text style={{ fontWeight: 'bold'}}>Length: </Text>{length} miles</Text>
-          <Text><Text style={{ fontWeight: 'bold'}}>Status: </Text>{status}</Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Difficulty: </Text>{difficulty}</Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Length: </Text>{length} miles</Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Status: </Text>{status}</Text>
           <Text style={{ marginTop: 5 }}>
             {summary}
           </Text>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   image: {
-    height: '100%'
+    height: '100%',
   },
 });
 

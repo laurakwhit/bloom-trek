@@ -14,7 +14,19 @@ const Nav = ({ selectedIndex, updateIndex }) => {
       onPress={updateIndex}
       selectedIndex={selectedIndex}
       buttons={buttons}
-      containerStyle={{ height: '15%' }}
+      containerStyle={{
+        height: '15%',
+        borderWidth: 0,
+        width: '100%',
+        marginLeft: 0,
+      }}
+      innerBorderStyle={{ color: 'transparent' }}
+      buttonStyle={{
+        opacity: 0.5,
+      }}
+      selectedButtonStyle={{
+        opacity: 1,
+      }}
     />
   );
 };

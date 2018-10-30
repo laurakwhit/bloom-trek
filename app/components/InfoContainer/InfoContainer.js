@@ -59,17 +59,19 @@ export default class InfoContainer extends Component {
 
     return (
       <View style={styles.container}>
-        {selectedIndex === 0 && !selectedFlower
-          ? <FlowerList style={styles.list} flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
-          : <View />}
-        {selectedIndex === 0 && selectedFlower
-          ? <FlowerDetail flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
-          : <View />}
-        {selectedIndex === 2 && selectedTrail
-          ? <TrailDetail selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
-          : <View />}
-        {selectedIndex === 2 && !selectedTrail
-          ? <TrailList style={styles.list} trails={trails} handleSelectedTrail={handleSelectedTrail} /> : <View />}
+        <View style={styles.info}>
+          {selectedIndex === 0 && !selectedFlower
+            ? <FlowerList flowers={flowers} goToFlowerDetails={this.goToFlowerDetails} />
+            : <View />}
+          {selectedIndex === 0 && selectedFlower
+            ? <FlowerDetail flowerInfo={flowerInfo} resetSelectedFlower={this.resetSelectedFlower} />
+            : <View />}
+          {selectedIndex === 2 && selectedTrail
+            ? <TrailDetail selectedTrail={selectedTrail} resetSelectedTrail={resetSelectedTrail} />
+            : <View />}
+          {selectedIndex === 2 && !selectedTrail
+            ? <TrailList trails={trails} handleSelectedTrail={handleSelectedTrail} /> : <View />}
+        </View>
         <Nav updateIndex={updateIndex} selectedIndex={selectedIndex} />
       </View>
     );
@@ -80,8 +82,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  list: {
+  info: {
     height: '85%',
+    borderColor: 'transparent',
+    backgroundColor: 'white',
+    shadowOffset: {
+      width: 0,
+      height: -3,
+    },
+    shadowColor: 'black',
+    shadowOpacity: 0.3,
   },
 });
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const TrailList = ({ trails, handleSelectedTrail }) => (
   <ScrollView>
-    <List containerStyle={styles.list} >
+    <List containerStyle={styles.list}>
       {
       trails.map((trail) => {
         let icon;
@@ -24,11 +24,11 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
         }
         return (
           <TouchableOpacity key={trail.name} activeOpacity={0.5} onPress={() => handleSelectedTrail(trail.id)}>
-          <ListItem
-            avatar={icon}
-            title={trail.name}
-            subtitle={`${trail.length} miles`}
-          />
+            <ListItem
+              avatar={icon}
+              title={trail.name}
+              subtitle={`${trail.length} miles`}
+            />
           </TouchableOpacity>
         );
       })
