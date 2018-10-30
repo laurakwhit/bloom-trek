@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   text: {
-    height: '40%',
+    height: '35%',
     padding: 10,
   },
   imageContainer: {
-    height: '60%',
+    height: '50%',
     width: '100%',
   },
   image: {
