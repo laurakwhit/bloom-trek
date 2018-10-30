@@ -1,11 +1,11 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const TrailList = ({ trails, handleSelectedTrail }) => (
-  <ScrollView contentContainerStyle={styles.container}>
-    <List>
+  <ScrollView>
+    <List containerStyle={styles.list}>
       {
       trails.map((trail) => {
         let icon;
@@ -23,13 +23,17 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
             break;
         }
         return (
-          <ListItem
-            avatar={icon}
+          <TouchableOpacity
             key={trail.name}
-            title={trail.name}
-            subtitle={`${trail.length} miles`}
+            activeOpacity={0.5}
             onPress={() => handleSelectedTrail(trail.id)}
-          />
+          >
+            <ListItem
+              avatar={icon}
+              title={trail.name}
+              subtitle={`${trail.length} miles`}
+            />
+          </TouchableOpacity>
         );
       })
       }
@@ -38,8 +42,10 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
 );
 
 const styles = StyleSheet.create({
-  container: {
-    height: 225,
+  list: {
+    marginTop: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
   },
 });
 

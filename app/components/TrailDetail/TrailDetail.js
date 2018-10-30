@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, Image, Linking,
+  StyleSheet, Text, Image, Linking, View,
 } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import PropTypes from 'prop-types';
@@ -18,17 +18,24 @@ export default class TrailDetail extends Component {
     } = selectedTrail;
     return (
       <GestureRecognizer style={styles.container} onSwipeRight={state => this.onSwipeRight(state)}>
-        <Text onPress={() => { Linking.openURL(trail_url); }}>{name}</Text>
-        <Text>Difficulty: {difficulty}</Text>
-        <Text>Length: {length} miles</Text>
-        <Text>Status: {status}</Text>
-        <Text style={{ marginBottom: 10 }}>
-          {summary}
-        </Text>
-        <Image
-          style={styles.image}
-          source={{ uri: trail_img_url }}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={{ uri: trail_img_url }}
+          />
+        </View>
+        <View style={styles.text}>
+          <Text style={styles.header} onPress={() => { Linking.openURL(trail_url); }}>
+            {`${name}   `}
+            <Image style={{ height: 18, width: 18 }} source={require('../../../assets/icons/arrow.png')} />
+          </Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Difficulty: </Text>{difficulty}</Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Length: </Text>{length} miles</Text>
+          <Text><Text style={{ fontWeight: 'bold' }}>Status: </Text>{status}</Text>
+          <Text style={{ marginTop: 5 }}>
+            {summary}
+          </Text>
+        </View>
       </GestureRecognizer>
     );
   }
@@ -36,11 +43,25 @@ export default class TrailDetail extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 225,
+    height: '85%',
+  },
+  header: {
+    width: '100%',
+    marginBottom: 5,
+    color: '#005900',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  text: {
+    height: '35%',
+    padding: 10,
+  },
+  imageContainer: {
+    height: '50%',
+    width: '100%',
   },
   image: {
-    height: 50,
-    width: 50,
+    height: '100%',
   },
 });
 

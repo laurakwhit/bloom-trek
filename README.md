@@ -16,7 +16,7 @@
 
 1.  touch .env and open
 
-1.  Add your google API key as follows  ``export const GOOGLE_KEY = 'your api key'``
+1.  Add your google API key as follows  ``GOOGLE_KEY=[your-api-key]``
 
 1.  expo start
 

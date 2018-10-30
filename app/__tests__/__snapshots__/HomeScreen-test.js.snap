@@ -24,8 +24,8 @@ ShallowWrapper {
         <Map
           deltas={
             Object {
-              "latitudeDelta": 1,
-              "longitudeDelta": 1,
+              "latitudeDelta": 0.9,
+              "longitudeDelta": 0.9,
             }
           }
           handleSelectedPark={[Function]}
@@ -59,8 +59,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "deltas": Object {
-            "latitudeDelta": 1,
-            "longitudeDelta": 1,
+            "latitudeDelta": 0.9,
+            "longitudeDelta": 0.9,
           },
           "handleSelectedPark": [Function],
           "handleSelectedTrail": [Function],
@@ -97,8 +97,8 @@ ShallowWrapper {
           <Map
             deltas={
               Object {
-                "latitudeDelta": 1,
-                "longitudeDelta": 1,
+                "latitudeDelta": 0.9,
+                "longitudeDelta": 0.9,
               }
             }
             handleSelectedPark={[Function]}
@@ -132,8 +132,8 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "deltas": Object {
-              "latitudeDelta": 1,
-              "longitudeDelta": 1,
+              "latitudeDelta": 0.9,
+              "longitudeDelta": 0.9,
             },
             "handleSelectedPark": [Function],
             "handleSelectedTrail": [Function],
