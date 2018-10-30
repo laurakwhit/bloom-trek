@@ -17,73 +17,6 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-<<<<<<< HEAD
-      "children": Array [
-        <Search
-          updateLocation={[Function]}
-        />,
-        <Map
-          deltas={
-            Object {
-              "latitudeDelta": 0.9,
-              "longitudeDelta": 0.9,
-            }
-          }
-          handleSelectedPark={[Function]}
-          handleSelectedTrail={[Function]}
-          location={null}
-          parks={Array []}
-          trails={Array []}
-        />,
-        <Component />,
-      ],
-      "style": Object {
-        "flex": 1,
-      },
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "updateLocation": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "deltas": Object {
-            "latitudeDelta": 0.9,
-            "longitudeDelta": 0.9,
-          },
-          "handleSelectedPark": [Function],
-          "handleSelectedTrail": [Function],
-          "location": null,
-          "parks": Array [],
-          "trails": Array [],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-=======
       "accessible": true,
       "allowFontScaling": true,
       "children": "broken",
@@ -91,7 +24,6 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": "broken",
->>>>>>> Update snapshot HomeScreen
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -100,73 +32,6 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-<<<<<<< HEAD
-        "children": Array [
-          <Search
-            updateLocation={[Function]}
-          />,
-          <Map
-            deltas={
-              Object {
-                "latitudeDelta": 0.9,
-                "longitudeDelta": 0.9,
-              }
-            }
-            handleSelectedPark={[Function]}
-            handleSelectedTrail={[Function]}
-            location={null}
-            parks={Array []}
-            trails={Array []}
-          />,
-          <Component />,
-        ],
-        "style": Object {
-          "flex": 1,
-        },
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "updateLocation": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "deltas": Object {
-              "latitudeDelta": 0.9,
-              "longitudeDelta": 0.9,
-            },
-            "handleSelectedPark": [Function],
-            "handleSelectedTrail": [Function],
-            "location": null,
-            "parks": Array [],
-            "trails": Array [],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-=======
         "accessible": true,
         "allowFontScaling": true,
         "children": "broken",
@@ -174,7 +39,6 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": "broken",
->>>>>>> Update snapshot HomeScreen
       "type": [Function],
     },
   ],
