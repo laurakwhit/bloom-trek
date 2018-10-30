@@ -9,6 +9,7 @@ import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import { getAllParks, getParkTrails } from '../../utils/api';
 
+console.log(process.env.GOOGLE_KEY);
 Geocoder.init(GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
