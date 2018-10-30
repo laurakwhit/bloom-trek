@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, Image,
+  StyleSheet, Text, Image, View,
 } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import PropTypes from 'prop-types';
@@ -23,14 +23,18 @@ export default class FlowerDetail extends Component {
 
     return (
       <GestureRecognizer style={styles.container} onSwipeRight={state => this.onSwipeRight(state)}>
-        <Text>Name: {name}</Text>
-        <Text>Scientific Name: {scientific_name}</Text>
-        <Text>Habitat: {habitat}</Text>
-        <Text>Description: {description}</Text>
-        <Image
-          style={StyleSheet.image}
-          source={{ uri: flower_img_url }}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={{ uri: flower_img_url }}
+          />
+        </View>
+        <View style={styles.text}>
+          <Text style={styles.info}><Text style={styles.emphasis}>Name: </Text>{name}</Text>
+          <Text style={styles.info}><Text style={styles.emphasis}>Scientific Name: </Text>{scientific_name}</Text>
+          <Text style={styles.info}><Text style={styles.emphasis}>Habitat: </Text>{habitat}</Text>
+          <Text style={styles.info}><Text style={styles.emphasis}>Description: </Text>{description}</Text>
+        </View>
       </GestureRecognizer>
     );
   }
@@ -40,9 +44,24 @@ const styles = StyleSheet.create({
   container: {
     height: '85%',
   },
+  emphasis: {
+    color: '#b55760',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  info: {
+    marginBottom: 5,
+  },
+  text: {
+    height: '35%',
+    padding: 10,
+  },
+  imageContainer: {
+    height: '50%',
+    width: '100%',
+  },
   image: {
-    height: 50,
-    width: 50,
+    height: '100%',
   },
 });
 
