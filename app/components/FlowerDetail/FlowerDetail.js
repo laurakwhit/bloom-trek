@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, Image, View,
+  StyleSheet, Text, Image, View, ScrollView,
 } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import PropTypes from 'prop-types';
@@ -29,12 +29,12 @@ export default class FlowerDetail extends Component {
             source={{ uri: flower_img_url }}
           />
         </View>
-        <View style={styles.text}>
+        <ScrollView style={styles.text}>
           <Text style={styles.info}><Text style={styles.emphasis}>Name: </Text>{name}</Text>
           <Text style={styles.info}><Text style={styles.emphasis}>Scientific Name: </Text>{scientific_name}</Text>
           <Text style={styles.info}><Text style={styles.emphasis}>Habitat: </Text>{habitat}</Text>
           <Text style={styles.info}><Text style={styles.emphasis}>Description: </Text>{description}</Text>
-        </View>
+        </ScrollView>
       </GestureRecognizer>
     );
   }
@@ -54,7 +54,10 @@ const styles = StyleSheet.create({
   },
   text: {
     height: '35%',
-    padding: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 5,
+    marginBottom: 10,
   },
   imageContainer: {
     height: '50%',

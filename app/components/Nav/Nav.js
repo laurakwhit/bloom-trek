@@ -20,9 +20,10 @@ const Nav = ({ selectedIndex, updateIndex }) => {
 };
 
 const styles = StyleSheet.create({
-  icon: { 
-    height: 35, 
-    width: 35 },
+  icon: {
+    height: 35,
+    width: 35,
+  },
 });
 
 Nav.propTypes = {
