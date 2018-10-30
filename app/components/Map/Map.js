@@ -43,6 +43,7 @@ export default class Map extends Component {
         key={trail.id}
         title={trail.name}
         coordinate={{ latitude: trail.latitude, longitude: trail.longitude }}
+        image={require('../../../assets/icons/boot.png')}
         onPress={() => this.handleTrailMarkerPress(trail.id)}
       />
     ));
