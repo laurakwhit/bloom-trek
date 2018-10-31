@@ -36,4 +36,10 @@ describe('TrailList', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should should invoke handleSelectedTrail onPress', () => {
+    wrapper.find('TouchableOpacity').props().onPress();
+
+    expect(mockHandleSelectedTrail).toHaveBeenCalled();
+  });
 });
