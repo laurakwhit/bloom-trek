@@ -9,6 +9,7 @@ import { GOOGLE_KEY } from 'react-native-dotenv';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
+import LoadingScreen from '../LoadingScreen';
 import { getAllParks, getParkTrails } from '../../utils/api';
 
 Geocoder.init(GOOGLE_KEY);
@@ -133,8 +134,8 @@ export default class HomeScreen extends Component {
       isFontLoaded,
     } = this.state;
 
-    if (!isFontLoaded) {
-      return <Text>broken</Text>;
+    if (!isFontLoaded || !parks.length) {
+      return <LoadingScreen />;
     }
     return (
       <View style={styles.container}>
