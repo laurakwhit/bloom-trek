@@ -109,4 +109,15 @@ describe('HomeScreen', () => {
       expect(wrapper.state().selectedTrail).toEqual(null);
     });
   });
+
+  describe('updateIndex', () => {
+    it('should set state with selectedIndex', () => {
+      wrapper.setState({ selectedIndex: 0 });
+      expect(wrapper.state().selectedIndex).toEqual(0);
+
+      wrapper.instance().updateIndex(2);
+
+      expect(wrapper.state().selectedIndex).toEqual(2);
+    });
+  });
 });
