@@ -23,6 +23,7 @@ export default class HomeScreen extends Component {
     trails: [],
     selectedTrail: null,
     selectedIndex: 0,
+    selectedMonth: null,
     deltas: {
       latitudeDelta: 0.9,
       longitudeDelta: 0.9,
@@ -38,6 +39,10 @@ export default class HomeScreen extends Component {
     this.setState({ isFontLoaded: true });
     this.getCurrentLocation();
     this.getParks();
+
+    const date = new Date();
+    const currentMonth = date.getMonth() + 1;
+    this.setState({ selectedMonth: currentMonth });
   }
 
   getCurrentLocation = async () => {
@@ -131,6 +136,7 @@ export default class HomeScreen extends Component {
       trails,
       selectedTrail,
       selectedIndex,
+      selectedMonth,
       isFontLoaded,
     } = this.state;
 
@@ -171,6 +177,7 @@ export default class HomeScreen extends Component {
             updateIndex={this.updateIndex}
             selectedIndex={selectedIndex}
             selectedTrail={selectedTrail}
+            selectedMonth={selectedMonth}
             handleSelectedTrail={this.handleSelectedTrail}
             resetSelectedTrail={this.resetSelectedTrail}
           />

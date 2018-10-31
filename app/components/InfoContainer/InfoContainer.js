@@ -26,9 +26,9 @@ export default class InfoContainer extends Component {
   }
 
   getFlowers = async (id) => {
-    const date = new Date();
-    const monthNumber = date.getMonth() + 1;
-    const flowers = await getFlowersByMonth(id, monthNumber);
+    const { selectedMonth } = this.props;
+
+    const flowers = await getFlowersByMonth(id, selectedMonth);
 
     this.setState({
       flowers,
@@ -115,4 +115,5 @@ InfoContainer.propTypes = {
   ),
   handleSelectedTrail: PropTypes.func,
   resetSelectedTrail: PropTypes.func,
+  selectedMonth: PropTypes.number,
 };
