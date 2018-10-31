@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import HomeScreen from '../screens/HomeScreen';
 
+/* global spyOn */
+
 describe('HomeScreen', () => {
   let unformattedParks;
   let wrapper;
@@ -41,6 +43,16 @@ describe('HomeScreen', () => {
       expect(wrapper.state().selectedPark).toEqual(1);
       expect(wrapper.state().selectedTrail).toEqual(null);
       expect(wrapper.state().trails).toEqual(unformattedParks);
+    });
+  });
+
+  describe('resetMap', () => {
+    it('should invoke getCurrentLocation when called', () => {
+      const spy = spyOn(wrapper.instance(), 'getCurrentLocation');
+
+      wrapper.instance().resetMap();
+
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
