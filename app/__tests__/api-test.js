@@ -33,6 +33,14 @@ describe('API', () => {
       expect(result).toEqual(mockPark);
     });
 
+    it('should throw error status code not ok', async () => {
+      const errorMessage = new Error({ message: 'failed' });
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject(errorMessage));
+
+      await expect(getAllParks()).rejects.toEqual(errorMessage);
+    });
+  });
+
   describe('getParkTrails', () => {
     let mockTrail;
 
