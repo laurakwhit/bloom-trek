@@ -17,10 +17,12 @@ export default class InfoContainer extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
     const { selectedPark } = this.props;
-
-    this.getFlowers(selectedPark);
+    if (selectedPark !== prevProps.selectedPark) {
+      this.getFlowers(selectedPark);
+      this.resetSelectedFlower();
+    }
   }
 
   getFlowers = async (id) => {
