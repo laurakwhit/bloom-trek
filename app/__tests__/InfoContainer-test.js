@@ -33,6 +33,17 @@ describe('InfoContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  describe('getFlowers', () => {
+    it('should set state flowers', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(mockFlowers),
+      }));
+
+      await wrapper.instance().getFlowers(1);
+      expect(wrapper.state().flowers).toEqual(mockFlowers);
+    });
+  });
+
   describe('resetSelectedFlower', () => {
     it('should set state when invoked', () => {
       wrapper.setState({ selectedFlower: 1 });
