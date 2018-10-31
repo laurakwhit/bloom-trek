@@ -103,5 +103,11 @@ describe('API', () => {
 
       expect(window.fetch).toHaveBeenCalledWith(url);
     });
+
+    it('should return array if status code ok', async () => {
+      const result = await getFlowersByMonth(id, month);
+
+      expect(result).toEqual(mockFlower);
+    });
   });
 });
