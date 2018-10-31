@@ -65,5 +65,11 @@ describe('API', () => {
 
       expect(window.fetch).toHaveBeenCalledWith(url);
     });
+
+    it('should return an array if status code is ok', async () => {
+      const result = await getParkTrails(id);
+
+      expect(result).toEqual(mockTrail);
+    });
   });
 });
