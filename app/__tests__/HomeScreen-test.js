@@ -5,10 +5,27 @@ import HomeScreen from '../screens/HomeScreen';
 /* global spyOn */
 
 describe('HomeScreen', () => {
+  let unformattedTrails;
   let unformattedParks;
   let wrapper;
 
   beforeEach(() => {
+    unformattedTrails = [{
+      id: 1,
+      name: 'Castlewood Canyon - Rimrock to Creek Bottom Loop',
+      uid: 7006769,
+      difficulty: 'medium',
+      length: 4.6,
+      status: 'All Clear',
+      trail_img_url: 'https://cdn-files.apstatic.com/hike/7006325_medium_1438452681.jpg',
+      trail_url: 'https://www.hikingproject.com/trail/7006769/castlewood-canyon-rimrock-to-creek-bottom-loop',
+      summary: 'A fun, rolling trail with a sense of seclusion, great geology, and historical sites.',
+      park_id: 1,
+      coords: {
+        latitude: 39.3598,
+        longitude: -104.7682,
+      },
+    }];
     unformattedParks = [{
       id: 1,
       name: 'Castlewood Canyon',
@@ -66,6 +83,19 @@ describe('HomeScreen', () => {
 
       expect(wrapper.state().selectedPark).toEqual(null);
       expect(wrapper.state().trails).toEqual([]);
+    });
+  });
+
+  describe('handleSelectedTrail', () => {
+    it('should set state when invoked', () => {
+      wrapper.setState({ trails: unformattedTrails });
+      expect(wrapper.state().selectedTrail).toEqual(null);
+      expect(wrapper.state().selectedIndex).toEqual(0);
+
+      wrapper.instance().handleSelectedTrail(1);
+
+      expect(wrapper.state().selectedTrail).toEqual(...unformattedTrails);
+      expect(wrapper.state().selectedIndex).toEqual(2);
     });
   });
 });
