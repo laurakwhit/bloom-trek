@@ -38,5 +38,14 @@ describe('FlowerDetail', () => {
 
       expect(mockResetSelectedFlower).toHaveBeenCalled();
     });
+
+    it('should invoke onSwipeRight on right swipe', () => {
+      const spy = spyOn(wrapper.instance(), 'onSwipeRight');
+      wrapper.instance().forceUpdate();
+
+      wrapper.find('GestureRecognizer').props().onSwipeRight();
+
+      expect(spy).toHaveBeenCalled();
+    });
   });
 });
