@@ -129,4 +129,15 @@ describe('HomeScreen', () => {
       expect(wrapper.state().selectedIndex).toEqual(0);
     });
   });
+
+  describe('updateMonth', () => {
+    it('should set state selectedMonth', () => {
+      wrapper.setState({ selectedMonth: 1 });
+      expect(wrapper.state().selectedMonth).toEqual(1);
+
+      wrapper.instance().updateMonth(3);
+
+      expect(wrapper.state().selectedMonth).toEqual(3);
+    });
+  });
 });
