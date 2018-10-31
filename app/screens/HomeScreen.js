@@ -6,11 +6,11 @@ import { Header } from 'react-native-elements';
 import { Location, Permissions, Font } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import { GOOGLE_KEY } from 'react-native-dotenv';
-import Map from '../../components/Map/Map';
-import Search from '../../components/Search/Search';
-import InfoContainer from '../../components/InfoContainer/InfoContainer';
-import LoadingScreen from '../LoadingScreen';
-import { getAllParks, getParkTrails } from '../../utils/api';
+import Map from '../components/Map';
+import Search from '../components/Search';
+import InfoContainer from '../components/InfoContainer';
+import LoadingScreen from './LoadingScreen';
+import { getAllParks, getParkTrails } from '../utils/api';
 
 Geocoder.init(GOOGLE_KEY);
 
@@ -33,7 +33,7 @@ export default class HomeScreen extends Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      bloom: require('../../../assets/fonts/Pacifico-Regular.ttf'),
+      bloom: require('../../assets/fonts/Pacifico-Regular.ttf'),
     });
 
     this.setState({ isFontLoaded: true });
@@ -156,7 +156,7 @@ export default class HomeScreen extends Component {
           centerComponent={(
             <View style={styles.header}>
               <Text style={styles.headerText}>Bloom Trek</Text>
-              <Image style={styles.headerImg} source={require('../../../assets/icons/flower.png')} />
+              <Image style={styles.headerImg} source={require('../../assets/icons/flower.png')} />
             </View>
           )}
         />

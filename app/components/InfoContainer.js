@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import TrailList from '../TrailList/TrailList';
-import TrailDetail from '../TrailDetail/TrailDetail';
-import FlowerList from '../FlowerList/FlowerList';
-import FlowerDetail from '../FlowerDetail/FlowerDetail';
-import Nav from '../Nav/Nav';
-import { getFlowersByMonth } from '../../utils/api';
+import TrailList from './TrailList';
+import TrailDetail from './TrailDetail';
+import FlowerList from './FlowerList';
+import FlowerDetail from './FlowerDetail';
+import Nav from './Nav';
+import { getFlowersByMonth } from '../utils/api';
 
 export default class InfoContainer extends Component {
   constructor() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Nav from '../components/Nav/Nav';
+import Nav from '../components/Nav';
 
 describe('Nav', () => {
   let wrapper;

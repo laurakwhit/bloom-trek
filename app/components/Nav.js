@@ -4,9 +4,9 @@ import { ButtonGroup } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const Nav = ({ selectedIndex, updateIndex }) => {
-  const flowers = () => <Image style={styles.icon} source={require('../../../assets/icons/flower.png')} />;
-  const home = () => <Image style={styles.icon} source={require('../../../assets/icons/map.png')} />;
-  const trails = () => <Image style={styles.icon} source={require('../../../assets/icons/trails.png')} />;
+  const flowers = () => <Image style={styles.icon} source={require('../../assets/icons/flower.png')} />;
+  const home = () => <Image style={styles.icon} source={require('../../assets/icons/map.png')} />;
+  const trails = () => <Image style={styles.icon} source={require('../../assets/icons/trails.png')} />;
   const buttons = [{ element: flowers }, { element: home }, { element: trails }];
 
   return (
