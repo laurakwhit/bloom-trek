@@ -98,7 +98,7 @@ export default class HomeScreen extends Component {
   handleSelectedTrail = (id) => {
     const { trails } = this.state;
     const selectedTrail = trails.find(trail => trail.id === id);
-    this.setState({ selectedTrail, selectedIndex: 2 });
+    this.setState({ selectedTrail, location: selectedTrail.coords, selectedIndex: 2 });
   }
 
   resetSelectedTrail = () => {
