@@ -22,11 +22,19 @@ describe('Map', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('handleTrailMarkerPress', () => {
-    it('should invoke handeSelectedTrail when called', () => {
+  describe('handleParkMarkerPress', () => {
+    it('should invoke handeSelectedPark when called', () => {
       wrapper.instance().handleParkMarkerPress();
 
       expect(mockHandleSelectedPark).toHaveBeenCalled();
+    });
+  });
+
+  describe('HandleTrailMarkerPress', () => {
+    it('should invoke handleSelectedTrail', () => {
+      wrapper.instance().handleTrailMarkerPress();
+
+      expect(mockHandleSelectedTrail).toHaveBeenCalled();
     });
   });
 });
