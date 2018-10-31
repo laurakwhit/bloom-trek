@@ -18,8 +18,8 @@ export default class InfoContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { selectedPark } = this.props;
-    if (selectedPark !== prevProps.selectedPark) {
+    const { selectedPark, selectedMonth } = this.props;
+    if (selectedPark !== prevProps.selectedPark || selectedMonth !== prevProps.selectedMonth) {
       this.getFlowers(selectedPark);
       this.resetSelectedFlower();
     }

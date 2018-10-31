@@ -9,6 +9,7 @@ import { GOOGLE_KEY } from 'react-native-dotenv';
 import Map from '../components/Map';
 import Search from '../components/Search';
 import InfoContainer from '../components/InfoContainer';
+import MonthSlider from '../components/MonthSlider';
 import LoadingScreen from './LoadingScreen';
 import { getAllParks, getParkTrails } from '../utils/api';
 
@@ -127,6 +128,10 @@ export default class HomeScreen extends Component {
     }
   };
 
+  updateMonth = (selectedMonth) => {
+    this.setState({ selectedMonth });
+  }
+
   render() {
     const {
       location,
@@ -184,6 +189,7 @@ export default class HomeScreen extends Component {
         ) : (
           <View />
         )}
+        <MonthSlider selectedMonth={selectedMonth} updateMonth={this.updateMonth} />
       </View>
     );
   }
