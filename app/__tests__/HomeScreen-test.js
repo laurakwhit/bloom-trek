@@ -54,5 +54,18 @@ describe('HomeScreen', () => {
 
       expect(spy).toHaveBeenCalled();
     });
+
+    it('should set state when invoked', () => {
+      wrapper.setState({
+        selectedPark: 1,
+        trails: [1, 2, 4, 5],
+      });
+      expect(wrapper.state().selectedPark).toEqual(1);
+
+      wrapper.instance().resetMap();
+
+      expect(wrapper.state().selectedPark).toEqual(null);
+      expect(wrapper.state().trails).toEqual([]);
+    });
   });
 });
