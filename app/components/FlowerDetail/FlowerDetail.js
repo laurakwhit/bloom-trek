@@ -30,7 +30,9 @@ export default class FlowerDetail extends Component {
           />
         </View>
         <ScrollView style={styles.text}>
-          <Text style={styles.info}><Text style={styles.emphasis}>Name: </Text>{name}</Text>
+          <Text style={styles.info}><Text style={styles.emphasis}>Name: </Text>
+            {name.toUpperCase()}
+          </Text>
           <Text style={styles.info}>
             <Text style={styles.emphasis}>Scientific Name: </Text>
             {scientific_name}
