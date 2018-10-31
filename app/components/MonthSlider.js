@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: '10%',
     alignItems: 'stretch',
     justifyContent: 'center',
-    top: 80,
+    top: 100,
     marginLeft: '5%',
     width: '90%',
     position: 'absolute',
@@ -35,10 +35,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
   sliderText: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     justifyContent: 'center',
-    width: '100%',
+    fontFamily: 'bloom',
   },
 });
 
