@@ -19,7 +19,7 @@ export default class InfoContainer extends Component {
 
   componentDidMount() {
     const { selectedPark } = this.props;
-    console.log(selectedPark);
+
     this.getFlowers(selectedPark);
   }
 
