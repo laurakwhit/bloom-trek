@@ -119,5 +119,14 @@ describe('HomeScreen', () => {
 
       expect(wrapper.state().selectedIndex).toEqual(2);
     });
+
+    it('should set state selectedIndex 0 if selectedIndex is 1', () => {
+      wrapper.setState({ selectedIndex: 0 });
+      expect(wrapper.state().selectedIndex).toEqual(0);
+
+      wrapper.instance().updateIndex(1);
+
+      expect(wrapper.state().selectedIndex).toEqual(0);
+    });
   });
 });
