@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TrailList from '../components/TrailList/TrailList';
+import TrailList from '../components/TrailList';
 
 describe('TrailList', () => {
   let wrapper;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 describe('HomeScreen', () => {
   let wrapper;

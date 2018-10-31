@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FlowerList from '../components/FlowerList/FlowerList';
+import FlowerList from '../components/FlowerList';
 
 describe('FlowerList', () => {
   let wrapper;

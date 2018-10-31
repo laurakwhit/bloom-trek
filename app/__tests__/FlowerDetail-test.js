@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FlowerDetail from '../components/FlowerDetail/FlowerDetail';
+import FlowerDetail from '../components/FlowerDetail';
 
 /* global spyOn */
 
