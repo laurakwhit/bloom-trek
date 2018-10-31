@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import {
+  View, StyleSheet, Text, Image,
+} from 'react-native';
 import { Header } from 'react-native-elements';
 import { Location, Permissions, Font } from 'expo';
 import Geocoder from 'react-native-geocoding';
@@ -108,7 +110,7 @@ export default class HomeScreen extends Component {
           },
         });
       })
-      .catch(error => console.warn(error));
+      .catch(error => this.setState({ errorMessage: error }));
   };
 
   updateIndex = (selectedIndex) => {
@@ -139,11 +141,18 @@ export default class HomeScreen extends Component {
         <Header
           backgroundColor="white"
           outerContainerStyles={{ padding: 0 }}
-          containerStyle={{ margin: 0 }}
-          centerComponent={{
-            text: 'Bloom Trek',
-            style: styles.header,
+          containerStyle={{
+            flex: 1,
+            margin: 0,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
+          centerComponent={(
+            <View style={styles.header}>
+              <Text style={styles.headerText}>Bloom Trek</Text>
+              <Image style={styles.headerImg} source={require('../../../assets/icons/flower.png')} />
+            </View>
+          )}
         />
         <Search updateLocation={this.updateLocation} />
         <Map
@@ -179,9 +188,18 @@ const styles = StyleSheet.create({
     height: 50,
   },
   header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerText: {
     color: '#1e231b',
     fontSize: 30,
     fontFamily: 'bloom',
     padding: 0,
+    marginRight: 10,
+  },
+  headerImg: {
+    height: 30,
+    width: 30,
   },
 });
