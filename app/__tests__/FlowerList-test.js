@@ -31,4 +31,10 @@ describe('FlowerList', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should invoke goToFlowerDetails onPress', () => {
+    wrapper.find('TouchableOpacity').props().onPress();
+
+    expect(mockGoToFlowerDetails).toHaveBeenCalled();
+  });
 });
