@@ -98,4 +98,15 @@ describe('HomeScreen', () => {
       expect(wrapper.state().selectedIndex).toEqual(2);
     });
   });
+
+  describe('resetSelectedTrail', () => {
+    it('should set state when invoked', () => {
+      wrapper.setState({ selectedTrail: unformattedTrails });
+      expect(wrapper.state().selectedTrail).toEqual(unformattedTrails);
+
+      wrapper.instance().resetSelectedTrail();
+
+      expect(wrapper.state().selectedTrail).toEqual(null);
+    });
+  });
 });
