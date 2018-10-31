@@ -80,6 +80,14 @@ describe('API', () => {
       expect(result).toEqual(mockTrail);
     });
 
+    it('should throw error if status code not ok', async () => {
+      const errorMessage = new Error({ message: 'failed' });
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject(errorMessage));
+
+      await expect(getParkTrails()).rejects.toEqual(errorMessage);
+    });
+  });
+
   describe('getFlowersByMonth', () => {
     let id;
     let month;
