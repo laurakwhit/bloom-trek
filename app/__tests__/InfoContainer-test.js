@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import InfoContainer from '../components/InfoContainer';
-import { getFlowersByMonth } from '../utils/api';
 
 describe('InfoContainer', () => {
   let mockSelectedMonth;
