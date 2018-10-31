@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import FlowerDetail from '../components/FlowerDetail/FlowerDetail';
 
+/* global spyOn */
+
 describe('FlowerDetail', () => {
   let mockResetSelectedFlower;
   let wrapper;

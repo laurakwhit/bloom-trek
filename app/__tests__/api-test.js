@@ -1,5 +1,3 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import { getAllParks, getParkTrails, getFlowersByMonth } from '../utils/api';
 
 describe('API', () => {

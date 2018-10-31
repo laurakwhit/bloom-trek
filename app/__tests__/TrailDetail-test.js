@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TrailDetail from '../components/TrailDetail/TrailDetail';
 
+/* global spyOn */
+
 describe('TrailDetail', () => {
   let mockResetSelectedTrail;
   let mockSelectedTrail;
