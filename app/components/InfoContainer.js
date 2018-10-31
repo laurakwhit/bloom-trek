@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import TrailList from '../TrailList/TrailList';
-import TrailDetail from '../TrailDetail/TrailDetail';
-import FlowerList from '../FlowerList/FlowerList';
-import FlowerDetail from '../FlowerDetail/FlowerDetail';
-import Nav from '../Nav/Nav';
-import { getFlowersByMonth } from '../../utils/api';
+import TrailList from './TrailList';
+import TrailDetail from './TrailDetail';
+import FlowerList from './FlowerList';
+import FlowerDetail from './FlowerDetail';
+import Nav from './Nav';
+import { getFlowersByMonth } from '../utils/api';
 
 export default class InfoContainer extends Component {
   constructor() {
@@ -17,16 +17,18 @@ export default class InfoContainer extends Component {
     };
   }
 
-  componentDidMount() {
-    const { selectedPark } = this.props;
-
-    this.getFlowers(selectedPark);
+  componentDidUpdate(prevProps) {
+    const { selectedPark, selectedMonth } = this.props;
+    if (selectedPark !== prevProps.selectedPark || selectedMonth !== prevProps.selectedMonth) {
+      this.getFlowers(selectedPark);
+      this.resetSelectedFlower();
+    }
   }
 
   getFlowers = async (id) => {
-    const date = new Date();
-    const monthNumber = date.getMonth() + 1;
-    const flowers = await getFlowersByMonth(id, monthNumber);
+    const { selectedMonth } = this.props;
+
+    const flowers = await getFlowersByMonth(id, selectedMonth);
 
     this.setState({
       flowers,
@@ -113,4 +115,5 @@ InfoContainer.propTypes = {
   ),
   handleSelectedTrail: PropTypes.func,
   resetSelectedTrail: PropTypes.func,
+  selectedMonth: PropTypes.number,
 };

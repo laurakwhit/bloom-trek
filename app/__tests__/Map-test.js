@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Map from '../components/Map/Map';
+import Map from '../components/Map';
 
 describe('Map', () => {
   let wrapper;

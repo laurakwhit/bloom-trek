@@ -2,6 +2,7 @@ node_modules/**/*
 .expo/*
 npm-debug.*
 assets/.DS_Store
+assets/fonts/.DS_Store
 
 # API
 .env

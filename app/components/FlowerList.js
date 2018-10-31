@@ -1,12 +1,16 @@
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  ScrollView, StyleSheet, TouchableOpacity, Text,
+} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const FlowerList = ({ flowers, goToFlowerDetails }) => (
   <ScrollView>
-    <List containerStyle={styles.list}>
-      {
+    {flowers.length
+      ? (
+        <List containerStyle={styles.list}>
+          {
         flowers.map(flower => (
           <TouchableOpacity
             key={flower.name}
@@ -24,7 +28,9 @@ const FlowerList = ({ flowers, goToFlowerDetails }) => (
           </TouchableOpacity>
         ))
       }
-    </List>
+        </List>
+      )
+      : <Text style={styles.message}>There are no blooms this month...</Text>}
   </ScrollView>
 );
 
@@ -33,6 +39,12 @@ const styles = StyleSheet.create({
     marginTop: 0,
     borderTopWidth: 0,
     borderBottomWidth: 0,
+  },
+  message: {
+    marginTop: '30%',
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 

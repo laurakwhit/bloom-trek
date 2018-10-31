@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TrailDetail from '../components/TrailDetail/TrailDetail';
+import TrailDetail from '../components/TrailDetail';
 
 /* global spyOn */
 

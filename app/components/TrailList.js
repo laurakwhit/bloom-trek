@@ -11,13 +11,13 @@ const TrailList = ({ trails, handleSelectedTrail }) => (
         let icon;
         switch (trail.difficulty) {
           case ('easy'):
-            icon = require('../../../assets/icons/triangle.jpg');
+            icon = require('../../assets/icons/triangle.jpg');
             break;
           case ('medium'):
-            icon = require('../../../assets/icons/rectangle.jpg');
+            icon = require('../../assets/icons/rectangle.jpg');
             break;
           case ('hard'):
-            icon = require('../../../assets/icons/circle.jpg');
+            icon = require('../../assets/icons/circle.jpg');
             break;
           default:
             break;

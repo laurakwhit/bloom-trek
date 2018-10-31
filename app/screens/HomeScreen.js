@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import {
+  View, StyleSheet, Text, Image,
+} from 'react-native';
 import { Header } from 'react-native-elements';
 import { Location, Permissions, Font } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import { GOOGLE_KEY } from 'react-native-dotenv';
-import Map from '../../components/Map/Map';
-import Search from '../../components/Search/Search';
-import InfoContainer from '../../components/InfoContainer/InfoContainer';
-import { getAllParks, getParkTrails } from '../../utils/api';
+import Map from '../components/Map';
+import Search from '../components/Search';
+import InfoContainer from '../components/InfoContainer';
+import MonthSlider from '../components/MonthSlider';
+import LoadingScreen from './LoadingScreen';
+import { getAllParks, getParkTrails } from '../utils/api';
 
 Geocoder.init(GOOGLE_KEY);
 
@@ -20,6 +24,7 @@ export default class HomeScreen extends Component {
     trails: [],
     selectedTrail: null,
     selectedIndex: 0,
+    selectedMonth: null,
     deltas: {
       latitudeDelta: 0.9,
       longitudeDelta: 0.9,
@@ -29,12 +34,16 @@ export default class HomeScreen extends Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      bloom: require('../../../assets/fonts/Pacifico-Regular.ttf'),
+      bloom: require('../../assets/fonts/Pacifico-Regular.ttf'),
     });
 
     this.setState({ isFontLoaded: true });
     this.getCurrentLocation();
     this.getParks();
+
+    const date = new Date();
+    const currentMonth = date.getMonth() + 1;
+    this.setState({ selectedMonth: currentMonth });
   }
 
   getCurrentLocation = async () => {
@@ -108,7 +117,7 @@ export default class HomeScreen extends Component {
           },
         });
       })
-      .catch(error => console.warn(error));
+      .catch(error => this.setState({ errorMessage: error }));
   };
 
   updateIndex = (selectedIndex) => {
@@ -119,6 +128,10 @@ export default class HomeScreen extends Component {
     }
   };
 
+  updateMonth = (selectedMonth) => {
+    this.setState({ selectedMonth });
+  }
+
   render() {
     const {
       location,
@@ -128,22 +141,29 @@ export default class HomeScreen extends Component {
       trails,
       selectedTrail,
       selectedIndex,
+      selectedMonth,
       isFontLoaded,
     } = this.state;
 
-    if (!isFontLoaded) {
-      return <Text>broken</Text>;
+    if (!isFontLoaded || !parks.length) {
+      return <LoadingScreen />;
     }
     return (
       <View style={styles.container}>
         <Header
           backgroundColor="white"
-          outerContainerStyles={{ padding: 0 }}
-          containerStyle={{ margin: 0 }}
-          centerComponent={{
-            text: 'Bloom Trek',
-            style: styles.header,
+          outerContainerStyles={{ padding: 0, height: 50 }}
+          containerStyle={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
+          centerComponent={(
+            <View style={styles.header}>
+              <Text style={styles.headerText}>Bloom Trek</Text>
+              <Image style={styles.headerImg} source={require('../../assets/icons/flower.png')} />
+            </View>
+          )}
         />
         <Search updateLocation={this.updateLocation} />
         <Map
@@ -162,12 +182,14 @@ export default class HomeScreen extends Component {
             updateIndex={this.updateIndex}
             selectedIndex={selectedIndex}
             selectedTrail={selectedTrail}
+            selectedMonth={selectedMonth}
             handleSelectedTrail={this.handleSelectedTrail}
             resetSelectedTrail={this.resetSelectedTrail}
           />
         ) : (
           <View />
         )}
+        <MonthSlider selectedMonth={selectedMonth} updateMonth={this.updateMonth} />
       </View>
     );
   }
@@ -176,12 +198,20 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 50,
   },
   header: {
-    color: '#1e231b',
-    fontSize: 30,
-    fontFamily: 'bloom',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerText: {
+    marginRight: 10,
     padding: 0,
+    color: '#1e231b',
+    fontFamily: 'bloom',
+    fontSize: 30,
+  },
+  headerImg: {
+    height: 35,
+    width: 35,
   },
 });
