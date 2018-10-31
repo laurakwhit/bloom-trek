@@ -140,10 +140,9 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <Header
           backgroundColor="white"
-          outerContainerStyles={{ padding: 0 }}
+          outerContainerStyles={{ padding: 0, height: 50 }}
           containerStyle={{
             flex: 1,
-            margin: 0,
             justifyContent: 'center',
             alignItems: 'center',
           }}
@@ -185,21 +184,20 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 50,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   headerText: {
-    color: '#1e231b',
-    fontSize: 30,
-    fontFamily: 'bloom',
-    padding: 0,
     marginRight: 10,
+    padding: 0,
+    color: '#1e231b',
+    fontFamily: 'bloom',
+    fontSize: 30,
   },
   headerImg: {
-    height: 30,
-    width: 30,
+    height: 35,
+    width: 35,
   },
 });
