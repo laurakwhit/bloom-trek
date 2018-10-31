@@ -51,3 +51,465 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`HomeScreen should match snapshot with font and parks 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HomeScreen />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Header
+          backgroundColor="white"
+          centerComponent={
+            <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#1e231b",
+                    "fontFamily": "bloom",
+                    "fontSize": 30,
+                    "marginRight": 10,
+                    "padding": 0,
+                  }
+                }
+              >
+                Bloom Trek
+              </Text>
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 35,
+                    "width": 35,
+                  }
+                }
+              />
+            </Component>
+          }
+          containerStyle={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          outerContainerStyles={
+            Object {
+              "height": 50,
+              "padding": 0,
+            }
+          }
+        />,
+        <Search
+          updateLocation={[Function]}
+        />,
+        <Map
+          deltas={
+            Object {
+              "latitudeDelta": 0.9,
+              "longitudeDelta": 0.9,
+            }
+          }
+          handleSelectedPark={[Function]}
+          handleSelectedTrail={[Function]}
+          location={null}
+          parks={
+            Array [
+              Object {
+                "coords": Object {
+                  "latitude": 39.3379,
+                  "longitude": -104.7512,
+                },
+                "id": 1,
+                "name": "Castlewood Canyon",
+              },
+            ]
+          }
+          trails={Array []}
+        />,
+        <Component />,
+        <MonthSlider
+          selectedMonth={null}
+          updateMonth={[Function]}
+        />,
+      ],
+      "style": Object {
+        "flex": 1,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "backgroundColor": "white",
+          "centerComponent": <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1e231b",
+                  "fontFamily": "bloom",
+                  "fontSize": 30,
+                  "marginRight": 10,
+                  "padding": 0,
+                }
+              }
+            >
+              Bloom Trek
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 35,
+                  "width": 35,
+                }
+              }
+            />
+          </Component>,
+          "containerStyle": Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          "outerContainerStyles": Object {
+            "height": 50,
+            "padding": 0,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "updateLocation": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "deltas": Object {
+            "latitudeDelta": 0.9,
+            "longitudeDelta": 0.9,
+          },
+          "handleSelectedPark": [Function],
+          "handleSelectedTrail": [Function],
+          "location": null,
+          "parks": Array [
+            Object {
+              "coords": Object {
+                "latitude": 39.3379,
+                "longitude": -104.7512,
+              },
+              "id": 1,
+              "name": "Castlewood Canyon",
+            },
+          ],
+          "trails": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "selectedMonth": null,
+          "updateMonth": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Header
+            backgroundColor="white"
+            centerComponent={
+              <Component
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#1e231b",
+                      "fontFamily": "bloom",
+                      "fontSize": 30,
+                      "marginRight": 10,
+                      "padding": 0,
+                    }
+                  }
+                >
+                  Bloom Trek
+                </Text>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 35,
+                      "width": 35,
+                    }
+                  }
+                />
+              </Component>
+            }
+            containerStyle={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+            outerContainerStyles={
+              Object {
+                "height": 50,
+                "padding": 0,
+              }
+            }
+          />,
+          <Search
+            updateLocation={[Function]}
+          />,
+          <Map
+            deltas={
+              Object {
+                "latitudeDelta": 0.9,
+                "longitudeDelta": 0.9,
+              }
+            }
+            handleSelectedPark={[Function]}
+            handleSelectedTrail={[Function]}
+            location={null}
+            parks={
+              Array [
+                Object {
+                  "coords": Object {
+                    "latitude": 39.3379,
+                    "longitude": -104.7512,
+                  },
+                  "id": 1,
+                  "name": "Castlewood Canyon",
+                },
+              ]
+            }
+            trails={Array []}
+          />,
+          <Component />,
+          <MonthSlider
+            selectedMonth={null}
+            updateMonth={[Function]}
+          />,
+        ],
+        "style": Object {
+          "flex": 1,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "backgroundColor": "white",
+            "centerComponent": <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#1e231b",
+                    "fontFamily": "bloom",
+                    "fontSize": 30,
+                    "marginRight": 10,
+                    "padding": 0,
+                  }
+                }
+              >
+                Bloom Trek
+              </Text>
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 35,
+                    "width": 35,
+                  }
+                }
+              />
+            </Component>,
+            "containerStyle": Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            "outerContainerStyles": Object {
+              "height": 50,
+              "padding": 0,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "updateLocation": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "deltas": Object {
+              "latitudeDelta": 0.9,
+              "longitudeDelta": 0.9,
+            },
+            "handleSelectedPark": [Function],
+            "handleSelectedTrail": [Function],
+            "location": null,
+            "parks": Array [
+              Object {
+                "coords": Object {
+                  "latitude": 39.3379,
+                  "longitude": -104.7512,
+                },
+                "id": 1,
+                "name": "Castlewood Canyon",
+              },
+            ],
+            "trails": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "selectedMonth": null,
+            "updateMonth": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

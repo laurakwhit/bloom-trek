@@ -44,6 +44,15 @@ describe('HomeScreen', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match snapshot with font and parks', () => {
+    wrapper.setState({
+      isFontLoaded: true,
+      parks: unformattedParks,
+    });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe('getParks', () => {
     it('should set state with parks', async () => {
       await wrapper.instance().getParks();
