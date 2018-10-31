@@ -71,5 +71,37 @@ describe('API', () => {
 
       expect(result).toEqual(mockTrail);
     });
+
+  describe('getFlowersByMonth', () => {
+    let id;
+    let month;
+    let mockFlower;
+
+    beforeEach(() => {
+      id = 1;
+      month = 5;
+      mockFlower = [{
+        id: 1,
+        flower_img_url: 'http://extension.colostate.edu/county/jeffco/natural/plant_images/adenolinum_lewisii_1_378x400.jpg',
+        name: 'Wild Blue Flax',
+        common_name: 'Blue Flax',
+        scientific_name: 'Adenolinum lewisii',
+        description: 'Stigma capitate (headed); plant produces many branches from the base; styles of same length on different plants.',
+        bloom_start: 5,
+        bloom_end: 8,
+        habitat: 'Dry slopes, forest clearings, roadsides.',
+      }];
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(mockFlower),
+      }));
+    });
+
+    it('should be called with correct params', async () => {
+      const url = `https://bloom-trek-api.herokuapp.com/api/v1/parks/${id}/flowers?month=${month}`;
+
+      await getFlowersByMonth(id, month);
+
+      expect(window.fetch).toHaveBeenCalledWith(url);
+    });
   });
 });
