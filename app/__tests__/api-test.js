@@ -19,6 +19,7 @@ describe('API', () => {
         json: () => Promise.resolve(mockPark),
       }));
     });
+
     it('should be invoked with correct params', async () => {
       const url = 'https://bloom-trek-api.herokuapp.com/api/v1/parks/';
 
@@ -42,9 +43,11 @@ describe('API', () => {
   });
 
   describe('getParkTrails', () => {
+    let id;
     let mockTrail;
 
     beforeEach(() => {
+      id = 1;
       mockTrail = [{
         id: 1,
         name: 'Castlewood Canyon - Rimrock to Creek Bottom Loop',
@@ -67,7 +70,6 @@ describe('API', () => {
     });
 
     it('should be invoked with correct params', async () => {
-      const id = 1;
       const url = `https://bloom-trek-api.herokuapp.com/api/v1/parks/${id}/trails`;
       await getParkTrails(id);
 
@@ -124,6 +126,13 @@ describe('API', () => {
       const result = await getFlowersByMonth(id, month);
 
       expect(result).toEqual(mockFlower);
+    });
+
+    it('should throw error if status code not ok', async () => {
+      const errorMessage = new Error({ message: 'failed' });
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject(errorMessage));
+
+      await expect(getFlowersByMonth()).rejects.toEqual(errorMessage);
     });
   });
 });
