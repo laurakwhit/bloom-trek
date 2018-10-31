@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import InfoContainer from '../components/InfoContainer';
+import { getFlowersByMonth } from '../utils/api';
 
 describe('InfoContainer', () => {
   let mockSelectedMonth;
@@ -9,7 +10,7 @@ describe('InfoContainer', () => {
 
   beforeEach(() => {
     mockSelectedMonth = 5;
-    mockFlowermockS = [{
+    mockFlowers = [{
       id: 71,
       flower_img_url: 'http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg',
       name: 'Butter And Eggs',
@@ -23,12 +24,23 @@ describe('InfoContainer', () => {
     wrapper = shallow(
       <InfoContainer
         flowers={mockFlowers}
-        mockSelectedMonth={mockSelectedMonth}
+        selectedMonth={mockSelectedMonth}
       />,
     );
   });
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('resetSelectedFlower', () => {
+    it('should set state when invoked', () => {
+      wrapper.setState({ selectedFlower: 1 });
+      expect(wrapper.state().selectedFlower).toEqual(1);
+
+      wrapper.instance().resetSelectedFlower();
+
+      expect(wrapper.state().selectedFlower).toEqual(null);
+    });
   });
 });

@@ -4,8 +4,22 @@ exports[`InfoContainer should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <InfoContainer
-    flowers={undefined}
-    mockSelectedMonth={5}
+    flowers={
+      Array [
+        Object {
+          "bloom_end": 10,
+          "bloom_start": 6,
+          "common_name": "Yellow Toadflax",
+          "description": "Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering).",
+          "flower_img_url": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+          "habitat": "Open areas around former homesteads.",
+          "id": 71,
+          "name": "Butter And Eggs",
+          "scientific_name": "Linaria vulgaris",
+        },
+      ]
+    }
+    selectedMonth={5}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
