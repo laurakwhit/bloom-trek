@@ -43,4 +43,14 @@ describe('InfoContainer', () => {
       expect(wrapper.state().selectedFlower).toEqual(null);
     });
   });
+
+  describe('goToFlowerDetails', () => {
+    it('should set state with selected flower', () => {
+      expect(wrapper.state().selectedFlower).toEqual(null);
+
+      wrapper.instance().goToFlowerDetails(1);
+
+      expect(wrapper.state().selectedFlower).toEqual(1);
+    });
+  });
 });
