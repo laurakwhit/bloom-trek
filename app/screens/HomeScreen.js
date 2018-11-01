@@ -13,7 +13,7 @@ import MonthSlider from '../components/MonthSlider';
 import LoadingScreen from './LoadingScreen';
 import { getAllParks, getParkTrails } from '../utils/api';
 
-Geocoder.init(GOOGLE_KEY);
+Geocoder.init(process.env.GOOGLE_KEY || GOOGLE_KEY);
 
 export default class HomeScreen extends Component {
   state = {
