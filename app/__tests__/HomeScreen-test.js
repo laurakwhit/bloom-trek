@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 
 /* global spyOn */
 
-describe.skip('HomeScreen', () => {
+describe('HomeScreen', () => {
   let unformattedTrails;
   let unformattedParks;
   let wrapper;
