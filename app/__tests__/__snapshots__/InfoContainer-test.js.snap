@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoContainer should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <InfoContainer
+    flowers={
+      Array [
+        Object {
+          "bloom_end": 10,
+          "bloom_start": 6,
+          "common_name": "Yellow Toadflax",
+          "description": "Leaves glabrous (smooth, hairless) and glaucous (contains white waxy covering).",
+          "flower_img_url": "http://extension.colostate.edu/county/jeffco/natural/plant_images/linaria_vulgaris_298x400.jpg",
+          "habitat": "Open areas around former homesteads.",
+          "id": 71,
+          "name": "Butter And Eggs",
+          "scientific_name": "Linaria vulgaris",
+        },
+      ]
+    }
+    selectedMonth={5}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Component
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "transparent",
+              "height": "85%",
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": -3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+            }
+          }
+        >
+          <Component />
+          <Component />
+          <Component />
+          <Component />
+        </Component>,
+        <Nav
+          selectedIndex={undefined}
+          updateIndex={undefined}
+        />,
+      ],
+      "style": Object {
+        "flex": 1,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Component />,
+            <Component />,
+            <Component />,
+            <Component />,
+          ],
+          "style": Object {
+            "backgroundColor": "white",
+            "borderColor": "transparent",
+            "height": "85%",
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": -3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "selectedIndex": undefined,
+          "updateIndex": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Component
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderColor": "transparent",
+                "height": "85%",
+                "shadowColor": "black",
+                "shadowOffset": Object {
+                  "height": -3,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.3,
+              }
+            }
+          >
+            <Component />
+            <Component />
+            <Component />
+            <Component />
+          </Component>,
+          <Nav
+            selectedIndex={undefined}
+            updateIndex={undefined}
+          />,
+        ],
+        "style": Object {
+          "flex": 1,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Component />,
+              <Component />,
+              <Component />,
+              <Component />,
+            ],
+            "style": Object {
+              "backgroundColor": "white",
+              "borderColor": "transparent",
+              "height": "85%",
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": -3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "selectedIndex": undefined,
+            "updateIndex": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
