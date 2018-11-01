@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.org/laurakwhit/bloom-trek.svg?branch=master)](https://travis-ci.org/laurakwhit/bloom-trek)
 
-Bloom Trek allows users to find out what flowers are blooming and what hikes they can take to see them. The app displays parks near the user's current location and the corresponding blooming plants in that area for the current (or chosen) month. Trails within a 10 mile radius of the park are displayed as well. Bloom Trek was built with [React Native](https://facebook.github.io/react-native/) using [Expo](https://expo.io/). Test suite uses [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/). Corresponding API can be found [here](https://github.com/brickstar/bloomtrek-api).
-
+Bloom Trek allows users to find out what flowers are blooming and what hikes they can take to see them. The app displays parks near the user's current location and the corresponding blooming plants in that area for the current (or chosen) month. Trails within a 10 mile radius of the park are displayed as well. Bloom Trek was built with [React Native](https://facebook.github.io/react-native/) using [Expo](https://expo.io/). Test suite uses [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/). Corresponding API can be found [here](https://github.com/brickstar/bloomtrek-api). Data currently only available for native plants in Jefferson County, CO.
 
 ## Set Up
 
