@@ -144,6 +144,7 @@ export default class HomeScreen extends Component {
       selectedMonth,
       isFontLoaded,
     } = this.state;
+    const parkArea = parks.find(park => park.id === selectedPark);
 
     if (!isFontLoaded || !parks.length) {
       return <LoadingScreen />;
@@ -174,6 +175,7 @@ export default class HomeScreen extends Component {
           handleSelectedTrail={this.handleSelectedTrail}
           handleSelectedPark={this.handleSelectedPark}
           selectedPark={selectedPark}
+          parkArea={parkArea}
         />
         {selectedPark ? (
           <InfoContainer

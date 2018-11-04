@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, Text, StyleSheet,
+  View, Text, StyleSheet, Image,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { MapView } from 'expo';
@@ -43,19 +43,21 @@ export default class Map extends Component {
         key={trail.id}
         title={trail.name}
         coordinate={trail.coords}
-        image={require('../../assets/icons/trail-pin.png')}
         onPress={() => this.handleTrailMarkerPress(trail.id)}
-      />
+      >
+        <Image source={require('../../assets/icons/trail-pin.png')} style={{ width: 40, height: 40 }} />
+      </Marker>
     ));
   }
 
   renderParkRadius = () => {
-    const { location } = this.props;
+    const { parkArea } = this.props;
+    const { latitude, longitude } = parkArea.coords;
     return (
       <Circle
         center={{
-          latitude: location.latitude,
-          longitude: location.longitude,
+          latitude,
+          longitude,
         }}
         radius={16093.4}
         strokeWidth={0}
@@ -114,5 +116,8 @@ Map.propTypes = {
   ),
   deltas: PropTypes.objectOf(PropTypes.number),
   trails: PropTypes.arrayOf(PropTypes.object),
+  parkArea: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]),
+  ),
   selectedPark: PropTypes.number,
 };
