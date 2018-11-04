@@ -75,8 +75,8 @@ export default class HomeScreen extends Component {
       selectedPark: id,
       location: matchingPark.coords,
       deltas: {
-        latitudeDelta: 0.3,
-        longitudeDelta: 0.3,
+        latitudeDelta: 0.5,
+        longitudeDelta: 0.5,
       },
       selectedTrail: null,
       trails,
@@ -88,8 +88,8 @@ export default class HomeScreen extends Component {
     this.setState({
       selectedPark: null,
       deltas: {
-        latitudeDelta: 1,
-        longitudeDelta: 1,
+        latitudeDelta: 0.9,
+        longitudeDelta: 0.9,
       },
       trails: [],
     });
@@ -173,6 +173,7 @@ export default class HomeScreen extends Component {
           trails={trails}
           handleSelectedTrail={this.handleSelectedTrail}
           handleSelectedPark={this.handleSelectedPark}
+          selectedPark={selectedPark}
         />
         {selectedPark ? (
           <InfoContainer

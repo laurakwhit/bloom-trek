@@ -10,7 +10,7 @@ const initialRegion = {
   longitude: -104.99,
 };
 
-const { Marker } = MapView;
+const { Marker, Circle } = MapView;
 
 export default class Map extends Component {
   handleParkMarkerPress = (id) => {
@@ -49,8 +49,25 @@ export default class Map extends Component {
     ));
   }
 
+  renderParkRadius = () => {
+    const { location } = this.props;
+    return (
+      <Circle
+        center={{
+          latitude: location.latitude,
+          longitude: location.longitude,
+        }}
+        radius={16093.4}
+        strokeWidth={0}
+        strokeColor="transparent"
+        fillColor="rgba(0,89,0,0.2)"
+        z-index={-10}
+      />
+    );
+  }
+
   render() {
-    const { location, deltas } = this.props;
+    const { location, deltas, selectedPark } = this.props;
     const region = {
       ...location,
       ...deltas,
@@ -74,6 +91,7 @@ export default class Map extends Component {
       >
         {this.renderParkMarkers()}
         {this.renderTrailMarkers()}
+        {selectedPark ? this.renderParkRadius() : <View />}
       </MapView>
     );
   }
@@ -96,4 +114,5 @@ Map.propTypes = {
   ),
   deltas: PropTypes.objectOf(PropTypes.number),
   trails: PropTypes.arrayOf(PropTypes.object),
+  selectedPark: PropTypes.number,
 };
